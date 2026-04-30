@@ -1,9 +1,9 @@
 const TEMA = {
-  accent:  '#7ec86a',
-  bg:      '#0c110d',
-  cell:    '#111a12',
-  sidebar: '#0e1410',
-  topbar:  '#0e1410',
-  text:    '#d8ead0',
+  accent:  '#7c6ef0',
+  bg:      '#13111e',
+  cell:    '#1a1730',
+  sidebar: '#0e0c18',
+  topbar:  '#0e0c18',
+  text:    '#e2e0ff',
   mode:    'dark'
 };
