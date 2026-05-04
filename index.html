@@ -3,170 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gigamix — Calendário Editorial</title>
-<script src="tema.js"></script>
+<title>Dashboard Mkt Gigamix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="dados.js"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',-apple-system,sans-serif;height:100vh;overflow:hidden;-webkit-font-smoothing:antialiased;background:#13111e;color:#e2e0ff}
+body{font-family:'Sora',sans-serif;height:100vh;overflow:hidden;-webkit-font-smoothing:antialiased;background:#12101f;color:#e2e0ff}
 
-/* LOGIN */
-#loginScreen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:1000;background:#0c0a18}
-.lc-glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(91,79,207,0.15) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-60%);pointer-events:none}
-.login-card{position:relative;background:#13111e;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:40px 36px;width:360px}
-.lc-logo{display:flex;align-items:center;gap:10px;margin-bottom:28px}
-.lc-badge{width:38px;height:38px;border-radius:11px;background:#5b4fcf;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
-.lc-brand-name{font-size:14px;font-weight:500;color:#e2e0ff}
-.lc-brand-sub{font-size:11px;color:rgba(255,255,255,0.3);margin-top:1px}
-.lc-title{font-size:22px;font-weight:500;color:#e2e0ff;margin-bottom:5px}
-.lc-subtitle{font-size:12px;color:rgba(255,255,255,0.3);margin-bottom:26px}
-.lc-label{font-size:11px;font-weight:500;color:rgba(255,255,255,0.35);display:block;margin-bottom:5px}
-.lc-input{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;color:#e2e0ff;font-size:13px;padding:11px 13px;margin-bottom:12px;font-family:inherit;outline:none;transition:border-color .2s}
-.lc-input::placeholder{color:rgba(255,255,255,0.15)}
-.lc-input:focus{border-color:rgba(91,79,207,0.5)}
-.lc-btn{width:100%;background:#5b4fcf;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;transition:background .15s;margin-top:4px}
-.lc-btn:hover{background:#6d62d4}
-.lc-err{font-size:11px;color:#fca5a5;text-align:center;margin-top:10px;display:none}
-.lc-users{margin-top:18px;border-top:1px solid rgba(255,255,255,0.06);padding-top:14px}
-.lcu-title{font-size:9px;font-weight:600;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-.lcu-row{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:8px;cursor:pointer;transition:background .15s;margin-bottom:2px}
-.lcu-row:hover{background:rgba(255,255,255,0.04)}
-.lcu-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.lcu-name{font-size:11px;color:rgba(255,255,255,0.5);font-weight:500}
-.lcu-role{font-size:9px;color:rgba(255,255,255,0.2);margin-left:auto}
+/* ── LOGIN ───────────────────────────────────────────── */
+#loginScreen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:1000;background:#0d0b1a}
+.lc-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,75,220,0.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-55%);pointer-events:none}
+.login-card{position:relative;background:#1a1830;border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:44px 40px;width:380px}
+.lc-logo{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+.lc-badge{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#5b4fcf,#7c6ef0);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
+.lc-brand-name{font-size:15px;font-weight:600;color:#e2e0ff;line-height:1.2}
+.lc-brand-sub{font-size:11px;color:rgba(255,255,255,0.3);margin-top:2px}
+.lc-title{font-size:22px;font-weight:600;color:#e2e0ff;margin-bottom:5px}
+.lc-subtitle{font-size:12px;color:rgba(255,255,255,0.3);margin-bottom:28px}
+.lc-label{font-size:11px;font-weight:500;color:rgba(255,255,255,0.4);display:block;margin-bottom:6px}
+.lc-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:10px;color:#e2e0ff;font-size:13px;padding:12px 14px;margin-bottom:13px;font-family:'Sora',sans-serif;outline:none;transition:border-color .2s}
+.lc-input::placeholder{color:rgba(255,255,255,0.18)}
+.lc-input:focus{border-color:rgba(99,75,220,0.6)}
+.lc-btn{width:100%;background:linear-gradient(135deg,#5b4fcf,#7c6ef0);color:#fff;border:none;border-radius:10px;padding:13px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Sora',sans-serif;transition:opacity .15s;margin-top:4px}
+.lc-btn:hover{opacity:.9}
+.lc-err{font-size:11px;color:#f87171;text-align:center;margin-top:10px;display:none}
 
-/* APP */
+/* ── APP ─────────────────────────────────────────────── */
 #app{display:none;height:100vh;flex-direction:column}
 .layout{display:flex;flex:1;overflow:hidden}
 
-/* SIDENAV */
-.sidenav{width:54px;background:#0e0c18;border-right:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;flex-shrink:0;padding:14px 0}
-.sn-logo{width:34px;height:34px;border-radius:10px;background:#5b4fcf;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;margin-bottom:22px}
-.sn-sep{width:22px;height:1px;background:rgba(255,255,255,0.06);margin:8px 0}
-.sn-ico{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-bottom:4px;transition:background .15s;position:relative}
-.sn-ico:hover{background:rgba(255,255,255,0.05)}
-.sn-ico.active{background:rgba(91,79,207,0.25)}
-.sn-ico svg{width:15px;height:15px}
-.sn-ico svg path,.sn-ico svg rect,.sn-ico svg circle{stroke:rgba(255,255,255,0.2);transition:stroke .15s}
-.sn-ico.active svg path,.sn-ico.active svg rect,.sn-ico.active svg circle{stroke:#a78bfa}
-.sn-ico:hover svg path,.sn-ico:hover svg rect,.sn-ico:hover svg circle{stroke:rgba(255,255,255,0.45)}
-.sn-tooltip{position:absolute;left:46px;background:#1a1730;border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:5px 10px;font-size:10px;color:rgba(255,255,255,0.7);white-space:nowrap;display:none;z-index:100;pointer-events:none}
-.sn-ico:hover .sn-tooltip{display:block}
-.sn-spacer{flex:1}
-.sn-avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:#fff;cursor:pointer;position:relative}
-.sn-role-dot{position:absolute;bottom:-1px;right:-1px;width:8px;height:8px;border-radius:50%;border:2px solid #0e0c18}
+/* ── SIDEBAR ─────────────────────────────────────────── */
+.sidebar{width:220px;background:#0f0d1e;border-right:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;flex-shrink:0}
+.sb-brand{padding:20px 18px 16px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.sb-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.sb-badge{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#5b4fcf,#7c6ef0);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0}
+.sb-appname{font-size:13px;font-weight:600;color:#e2e0ff;line-height:1.25}
+.sb-appname span{font-weight:300;color:rgba(255,255,255,0.45)}
+.sb-user-row{display:flex;align-items:center;gap:8px;padding:10px 0 2px}
+.sb-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#5b4fcf,#7c6ef0);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;flex-shrink:0}
+.sb-username{font-size:11px;color:rgba(255,255,255,0.5);font-weight:500}
+.sb-role{font-size:9px;color:rgba(255,255,255,0.25)}
 
-/* TOPBAR */
+.sb-nav{padding:14px 12px;flex:1}
+.sb-section{font-size:9px;font-weight:600;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:.7px;padding:0 6px;margin:14px 0 6px}
+.sb-section:first-child{margin-top:0}
+.sb-item{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:9px;cursor:pointer;transition:background .15s;margin-bottom:2px}
+.sb-item:hover{background:rgba(255,255,255,0.05)}
+.sb-item.active{background:rgba(99,75,220,0.2)}
+.sb-item-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;border:2px solid transparent}
+.sb-item-label{font-size:12px;font-weight:500;color:rgba(255,255,255,0.45);transition:color .15s}
+.sb-item.active .sb-item-label{color:#e2e0ff}
+.sb-item:hover .sb-item-label{color:rgba(255,255,255,0.7)}
+.sb-item-count{margin-left:auto;font-size:9px;font-weight:600;border-radius:20px;padding:1px 7px;display:inline-block}
+
+/* tipo conteudo = azul-índigo */
+.dot-conteudo{background:#818cf8;border-color:#818cf8}
+.count-conteudo{background:rgba(129,140,248,.15);color:#818cf8}
+/* tipo campanha = laranja-âmbar */
+.dot-campanha{background:#fb923c;border-color:#fb923c}
+.count-campanha{background:rgba(251,146,60,.15);color:#fb923c}
+/* tipo darkpost = rosa-fúcsia */
+.dot-darkpost{background:#f472b6;border-color:#f472b6}
+.count-darkpost{background:rgba(244,114,182,.15);color:#f472b6}
+
+.sb-bottom{padding:12px 14px;border-top:1px solid rgba(255,255,255,0.06)}
+.logout-row{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:8px;cursor:pointer;transition:background .15s}
+.logout-row:hover{background:rgba(255,255,255,0.05)}
+.logout-row svg{width:14px;height:14px;flex-shrink:0;opacity:.35}
+.logout-label{font-size:11px;color:rgba(255,255,255,0.3)}
+
+/* ── TOPBAR ──────────────────────────────────────────── */
 .main-area{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
-.perm-banner{padding:5px 18px;font-size:10px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;color:rgba(255,255,255,0.4)}
-.perm-admin{background:rgba(139,92,246,0.06);color:rgba(167,139,250,0.8)}
-.perm-editor{background:rgba(74,222,128,0.05);color:rgba(74,222,128,0.7)}
-.perm-design{background:rgba(96,165,250,0.05);color:rgba(96,165,250,0.7)}
-.perm-leitor{background:rgba(251,146,60,0.05);color:rgba(251,146,60,0.6)}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:11px 18px;background:#0e0c18;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0}
-.tb-left{display:flex;align-items:center;gap:9px}
-.tb-title{font-size:14px;font-weight:500;color:#e2e0ff}
-.tb-tag{font-size:10px;font-weight:500;background:rgba(91,79,207,0.2);color:#a78bfa;border:1px solid rgba(91,79,207,0.3);border-radius:20px;padding:2px 9px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#0f0d1e;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0}
+.tb-left{display:flex;align-items:center;gap:8px}
+.tb-title{font-size:14px;font-weight:600;color:#e2e0ff}
+.tb-sep{color:rgba(255,255,255,0.15);font-size:14px}
+.tb-filter{font-size:12px;color:rgba(255,255,255,0.4)}
 .tb-right{display:flex;align-items:center;gap:6px}
-.nav-btn{width:27px;height:27px;border-radius:7px;border:1px solid rgba(255,255,255,0.08);background:none;cursor:pointer;color:rgba(255,255,255,0.3);font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}
-.nav-btn:hover{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7)}
-.month-pill{font-size:12px;font-weight:500;color:#e2e0ff;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:7px;padding:4px 13px;min-width:120px;text-align:center}
-.add-btn{background:#5b4fcf;color:#fff;border:none;border-radius:7px;padding:7px 14px;font-size:11px;font-weight:500;cursor:pointer;font-family:inherit;transition:background .15s}
-.add-btn:hover{background:#6d62d4}
-.add-btn:disabled{opacity:.35;cursor:not-allowed;background:#5b4fcf}
-.user-chip{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:7px;padding:5px 10px;cursor:pointer;transition:all .15s}
-.user-chip:hover{background:rgba(255,255,255,0.07)}
-.uc-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.uc-name{font-size:11px;color:rgba(255,255,255,0.65);font-weight:500}
-.uc-role{font-size:9px;color:rgba(255,255,255,0.25)}
+.nav-btn{width:28px;height:28px;border-radius:7px;border:1px solid rgba(255,255,255,0.09);background:none;cursor:pointer;color:rgba(255,255,255,0.35);font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:'Sora',sans-serif}
+.nav-btn:hover{background:rgba(255,255,255,0.07);color:#e2e0ff}
+.month-pill{font-size:12px;font-weight:600;color:#e2e0ff;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:8px;padding:5px 14px;min-width:130px;text-align:center}
+.add-btn{background:linear-gradient(135deg,#5b4fcf,#7c6ef0);color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:11px;font-weight:600;cursor:pointer;font-family:'Sora',sans-serif;transition:opacity .15s}
+.add-btn:hover{opacity:.9}
+.add-btn:disabled{opacity:.3;cursor:not-allowed}
 
-/* CALENDAR */
+/* ── CALENDAR ────────────────────────────────────────── */
 .content{display:flex;flex:1;overflow:hidden}
-.cal-wrap{flex:1;padding:14px 16px;overflow-y:auto;min-width:0}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:12px}
-.sc{background:#1a1730;border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:10px 13px;position:relative;overflow:hidden}
-.sc-accent{position:absolute;top:0;left:0;width:3px;height:100%;border-radius:3px 0 0 3px}
-.sc-lbl{font-size:9px;font-weight:500;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}
-.sc-val{font-size:22px;font-weight:500;color:#e2e0ff}
-.sc-sub{font-size:9px;color:rgba(255,255,255,0.2);margin-top:2px}
-.legend-row{display:flex;gap:5px;margin-bottom:10px;flex-wrap:wrap}
-.leg{display:flex;align-items:center;gap:4px;font-size:9px;color:rgba(255,255,255,0.3);background:#1a1730;border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:2px 8px}
-.leg-d{width:5px;height:5px;border-radius:50%;flex-shrink:0}
-.wdays{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:3px}
-.wd{text-align:center;font-size:9px;font-weight:500;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:.4px;padding:3px 0}
-.cgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
-.cc{min-height:78px;background:#1a1730;border:1px solid rgba(255,255,255,0.05);border-radius:8px;padding:7px 8px;cursor:default;overflow:hidden;position:relative;transition:border-color .15s}
+.cal-wrap{flex:1;padding:14px 18px;overflow-y:auto;min-width:0}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.sc{background:#1a1830;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:12px 14px;position:relative;overflow:hidden}
+.sc-stripe{position:absolute;top:0;left:0;width:3px;height:100%;border-radius:3px 0 0 3px}
+.sc-lbl{font-size:9px;font-weight:600;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:.7px;margin-bottom:6px}
+.sc-val{font-size:24px;font-weight:600;color:#e2e0ff}
+.sc-sub{font-size:9px;color:rgba(255,255,255,0.2);margin-top:3px}
+
+.wdays{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px}
+.wd{text-align:center;font-size:9px;font-weight:600;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:.5px;padding:4px 0}
+
+.cgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cc{min-height:82px;background:#1a1830;border:1px solid rgba(255,255,255,0.05);border-radius:9px;padding:8px 9px;cursor:default;overflow:hidden;position:relative;transition:border-color .15s}
 .cc.click{cursor:pointer}
-.cc.click:hover{border-color:rgba(91,79,207,0.4);background:#1e1b38}
+.cc.click:hover{border-color:rgba(99,75,220,0.45);background:#1e1c38}
 .cc.om{background:transparent!important;border-color:transparent!important}
 .cc.om .dn{color:rgba(255,255,255,0.07)}
-.cc.today{border-color:rgba(91,79,207,0.5)}
-.cc.sel{border-color:#7c6ef0;background:#1e1b38}
-.cc.hc{border-left:2px solid #5b4fcf}
-.cc.done-day{border-left:2px solid rgba(74,222,128,0.45)}
-.dn{font-size:10px;font-weight:500;color:rgba(255,255,255,0.22);margin-bottom:4px;display:inline-block}
-.cc.today .dn{color:#a78bfa;background:rgba(91,79,207,0.15);width:19px;height:19px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9px;margin-bottom:3px}
-.pill{font-size:8px;font-weight:500;border-radius:4px;padding:2px 5px;margin-bottom:2px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.canal-instagram{background:rgba(139,92,246,.3);color:#c4b5fd;border:1px solid rgba(139,92,246,.2)}
-.canal-carrossel{background:rgba(236,72,153,.25);color:#f9a8d4;border:1px solid rgba(236,72,153,.2)}
-.canal-facebook{background:rgba(59,130,246,.25);color:#93c5fd;border:1px solid rgba(59,130,246,.2)}
-.canal-youtube{background:rgba(239,68,68,.25);color:#fca5a5;border:1px solid rgba(239,68,68,.2)}
-.canal-story{background:rgba(34,197,94,.25);color:#86efac;border:1px solid rgba(34,197,94,.2)}
-.canal-reels{background:rgba(251,146,60,.25);color:#fdba74;border:1px solid rgba(251,146,60,.2)}
-.canal-blog{background:rgba(234,179,8,.25);color:#fde047;border:1px solid rgba(234,179,8,.2)}
-.canal-email{background:rgba(20,184,166,.25);color:#5eead4;border:1px solid rgba(20,184,166,.2)}
+.cc.today{border-color:rgba(99,75,220,0.55)}
+.cc.sel{border-color:#7c6ef0;background:#1e1c38}
+.cc.hc{border-left:2px solid rgba(99,75,220,0.6)}
+.cc.done-day{border-left:2px solid rgba(74,222,128,0.4)}
+.dn{font-size:10px;font-weight:600;color:rgba(255,255,255,0.22);margin-bottom:5px;display:inline-block}
+.cc.today .dn{color:#a78bfa;background:rgba(99,75,220,0.15);width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9px;margin-bottom:4px}
+
+.pill{font-size:8px;font-weight:600;border-radius:5px;padding:2px 6px;margin-bottom:2px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* canal colors */
+.canal-instagram{background:rgba(129,140,248,.25);color:#a5b4fc;border:1px solid rgba(129,140,248,.2)}
+.canal-carrossel{background:rgba(129,140,248,.2);color:#a5b4fc;border:1px solid rgba(129,140,248,.15)}
+.canal-facebook{background:rgba(59,130,246,.2);color:#93c5fd;border:1px solid rgba(59,130,246,.15)}
+.canal-youtube{background:rgba(239,68,68,.2);color:#fca5a5;border:1px solid rgba(239,68,68,.15)}
+.canal-story{background:rgba(34,197,94,.2);color:#86efac;border:1px solid rgba(34,197,94,.15)}
+.canal-reels{background:rgba(251,146,60,.2);color:#fdba74;border:1px solid rgba(251,146,60,.15)}
+.pill.tipo-campanha{background:rgba(251,146,60,.22);color:#fdba74;border:1px solid rgba(251,146,60,.2)}
+.pill.tipo-darkpost{background:rgba(244,114,182,.22);color:#f9a8d4;border:1px solid rgba(244,114,182,.2)}
 .pill.done-pill{opacity:.35;text-decoration:line-through}
 
-/* DETAIL */
-.detail{width:0;background:#0e0c18;border-left:1px solid rgba(255,255,255,0.06);overflow:hidden;transition:width .22s cubic-bezier(.4,0,.2,1);flex-shrink:0;display:flex;flex-direction:column}
-.detail.open{width:258px}
-.dt-inner{width:258px;display:flex;flex-direction:column;height:100%}
-.dt-head{padding:14px 16px 12px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0}
+/* ── DETAIL ──────────────────────────────────────────── */
+.detail{width:0;background:#0f0d1e;border-left:1px solid rgba(255,255,255,0.06);overflow:hidden;transition:width .22s cubic-bezier(.4,0,.2,1);flex-shrink:0;display:flex;flex-direction:column}
+.detail.open{width:268px}
+.dt-inner{width:268px;display:flex;flex-direction:column;height:100%}
+.dt-head{padding:16px 18px 14px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0}
 .dt-top{display:flex;align-items:flex-start;justify-content:space-between}
-.dt-date{font-size:13px;font-weight:500;color:#e2e0ff}
-.dt-week{font-size:10px;color:rgba(255,255,255,0.25);margin-top:2px}
-.dt-close{width:22px;height:22px;border-radius:6px;border:1px solid rgba(255,255,255,0.08);background:none;cursor:pointer;color:rgba(255,255,255,0.3);font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
-.dt-close:hover{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7)}
-.dt-body{flex:1;overflow-y:auto;padding:12px 14px 16px}
-.dcard{background:#1a1730;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:12px;margin-bottom:10px;transition:all .2s}
-.dcard.is-done{border-color:rgba(74,222,128,0.15);opacity:.65}
-.dc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-.dc-title{font-size:11px;font-weight:500;color:#e2e0ff;margin-bottom:3px;line-height:1.4}
+.dt-date{font-size:14px;font-weight:600;color:#e2e0ff}
+.dt-week{font-size:10px;color:rgba(255,255,255,0.25);margin-top:3px}
+.dt-close{width:24px;height:24px;border-radius:7px;border:1px solid rgba(255,255,255,0.09);background:none;cursor:pointer;color:rgba(255,255,255,0.3);font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;font-family:'Sora',sans-serif}
+.dt-close:hover{background:rgba(255,255,255,0.07);color:#e2e0ff}
+.dt-body{flex:1;overflow-y:auto;padding:14px 16px 18px}
+
+.dcard{background:#1a1830;border:1px solid rgba(255,255,255,0.07);border-radius:11px;padding:13px;margin-bottom:10px;transition:all .2s}
+.dcard.is-done{opacity:.6}
+.dcard.tipo-campanha-card{border-left:3px solid #fb923c}
+.dcard.tipo-darkpost-card{border-left:3px solid #f472b6}
+.dcard.tipo-conteudo-card{border-left:3px solid #818cf8}
+.dc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:6px}
+.dc-title{font-size:11px;font-weight:600;color:#e2e0ff;margin-bottom:4px;line-height:1.4}
 .dcard.is-done .dc-title{text-decoration:line-through;color:rgba(255,255,255,0.3)}
-.dc-obj{font-size:10px;color:rgba(255,255,255,0.25);margin-bottom:9px;line-height:1.4}
-.dc-sec{font-size:9px;font-weight:600;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:.6px;margin:8px 0 4px}
-.dc-copy{font-size:10px;color:rgba(255,255,255,0.45);line-height:1.65;background:#13111e;border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:8px 10px;white-space:pre-wrap;position:relative}
-.copy-btn{position:absolute;top:5px;right:5px;background:#1a1730;border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:2px 7px;font-size:9px;font-weight:500;color:rgba(255,255,255,0.4);cursor:pointer;font-family:inherit;transition:all .15s}
-.copy-btn:hover{background:rgba(91,79,207,0.2);color:#a78bfa;border-color:rgba(91,79,207,0.3)}
-.sbadge{font-size:9px;font-weight:500;border-radius:20px;padding:2px 8px;display:inline-block}
+.dc-obj{font-size:10px;color:rgba(255,255,255,0.25);margin-bottom:10px;line-height:1.4}
+.dc-sec{font-size:9px;font-weight:700;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:.7px;margin:8px 0 5px}
+.dc-copy{font-size:10px;color:rgba(255,255,255,0.45);line-height:1.7;background:#12101f;border:1px solid rgba(255,255,255,0.06);border-radius:7px;padding:9px 11px;white-space:pre-wrap;position:relative}
+.copy-btn{position:absolute;top:6px;right:6px;background:#1a1830;border:1px solid rgba(255,255,255,0.1);border-radius:5px;padding:2px 8px;font-size:9px;font-weight:600;color:rgba(255,255,255,0.4);cursor:pointer;font-family:'Sora',sans-serif;transition:all .15s}
+.copy-btn:hover{background:rgba(99,75,220,0.2);color:#a78bfa;border-color:rgba(99,75,220,0.35)}
+
+.sbadge{font-size:9px;font-weight:600;border-radius:20px;padding:2px 9px;display:inline-block}
 .sb-p{background:rgba(251,191,36,.12);color:#fcd34d;border:1px solid rgba(251,191,36,.2)}
 .sb-done{background:rgba(74,222,128,.12);color:#4ade80;border:1px solid rgba(74,222,128,.2)}
 .sb-i{background:rgba(139,92,246,.15);color:#c4b5fd;border:1px solid rgba(139,92,246,.2)}
-.done-btn{width:100%;margin-top:9px;padding:7px;border-radius:8px;font-size:11px;font-weight:500;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid rgba(91,79,207,0.3);background:rgba(91,79,207,0.1);color:#a78bfa}
-.done-btn:hover:not(:disabled){background:rgba(91,79,207,0.2);border-color:rgba(91,79,207,0.5)}
-.done-btn.undone-btn{border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.25);background:transparent}
-.done-btn.undone-btn:hover:not(:disabled){border-color:rgba(239,68,68,0.3);color:#fca5a5;background:rgba(239,68,68,0.08)}
-.done-btn:disabled{opacity:.25;cursor:not-allowed}
-.empty-state{text-align:center;padding:44px 16px}
-.empty-icon{font-size:30px;margin-bottom:10px;opacity:.15}
+
+.done-btn{width:100%;margin-top:10px;padding:8px;border-radius:9px;font-size:11px;font-weight:600;cursor:pointer;font-family:'Sora',sans-serif;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid rgba(99,75,220,0.3);background:rgba(99,75,220,0.1);color:#a78bfa}
+.done-btn:hover:not(:disabled){background:rgba(99,75,220,0.2);border-color:rgba(99,75,220,0.5)}
+.done-btn.undone{border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.25);background:transparent}
+.done-btn.undone:hover:not(:disabled){border-color:rgba(239,68,68,0.3);color:#fca5a5;background:rgba(239,68,68,0.08)}
+.done-btn:disabled{opacity:.2;cursor:not-allowed}
+
+.empty-state{text-align:center;padding:48px 16px}
+.empty-icon{font-size:32px;margin-bottom:12px;opacity:.15}
 .empty-txt{font-size:11px;color:rgba(255,255,255,0.2);line-height:1.7}
 
 /* ADD FORM */
-.add-form-wrap{border-top:1px solid rgba(255,255,255,0.06);padding:13px 14px;flex-shrink:0;display:none;background:#0e0c18}
-.af-sec{font-size:9px;font-weight:600;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
-.af-row{margin-bottom:8px}
-.af-label{font-size:10px;font-weight:500;color:rgba(255,255,255,0.35);display:block;margin-bottom:4px}
-.af-input,.af-select,.af-textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:7px;color:#e2e0ff;font-size:11px;padding:7px 9px;font-family:inherit;outline:none;transition:border-color .15s}
+.add-form-wrap{border-top:1px solid rgba(255,255,255,0.06);padding:14px 16px;flex-shrink:0;display:none;background:#0f0d1e}
+.af-sec{font-size:9px;font-weight:700;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px}
+.af-row{margin-bottom:9px}
+.af-label{font-size:10px;font-weight:500;color:rgba(255,255,255,0.35);display:block;margin-bottom:5px}
+.af-input,.af-select,.af-textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:8px;color:#e2e0ff;font-size:11px;padding:8px 10px;font-family:'Sora',sans-serif;outline:none;transition:border-color .15s}
 .af-input::placeholder,.af-textarea::placeholder{color:rgba(255,255,255,0.15)}
-.af-input:focus,.af-select:focus,.af-textarea:focus{border-color:rgba(91,79,207,0.5)}
-.af-select option{background:#1a1730;color:#e2e0ff}
-.af-textarea{height:56px;resize:none}
-.af-save{width:100%;background:#5b4fcf;color:#fff;border:none;border-radius:8px;padding:8px;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;margin-top:5px;transition:background .15s}
-.af-save:hover{background:#6d62d4}
+.af-input:focus,.af-select:focus,.af-textarea:focus{border-color:rgba(99,75,220,0.5)}
+.af-select option{background:#1a1830;color:#e2e0ff}
+.af-textarea{height:58px;resize:none}
+.af-save{width:100%;background:linear-gradient(135deg,#5b4fcf,#7c6ef0);color:#fff;border:none;border-radius:9px;padding:9px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Sora',sans-serif;margin-top:6px;transition:opacity .15s}
+.af-save:hover{opacity:.9}
 
 ::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:4px}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.09);border-radius:4px}
 </style>
 </head>
 <body>
@@ -177,87 +193,107 @@ body{font-family:'Inter',-apple-system,sans-serif;height:100vh;overflow:hidden;-
   <div class="login-card">
     <div class="lc-logo">
       <div class="lc-badge">GX</div>
-      <div><div class="lc-brand-name">Gigamix Tecnologias</div><div class="lc-brand-sub">Área restrita — Marketing</div></div>
+      <div>
+        <div class="lc-brand-name">Dashboard Mkt <span>Gigamix</span></div>
+        <div class="lc-brand-sub">Área restrita — Marketing</div>
+      </div>
     </div>
-    <div class="lc-title">Calendário Editorial</div>
-    <div class="lc-subtitle">Faça login para continuar</div>
-    <label class="lc-label">Usuário</label>
-    <input id="lUser" class="lc-input" type="text" placeholder="seu usuário" autocomplete="off">
+    <div class="lc-title">Entrar na plataforma</div>
+    <div class="lc-subtitle">Acesso exclusivo para a equipe</div>
+    <label class="lc-label">Login</label>
+    <input id="lUser" class="lc-input" type="text" placeholder="seu login" autocomplete="off">
     <label class="lc-label">Senha</label>
     <input id="lPass" class="lc-input" type="password" placeholder="••••••••">
     <button class="lc-btn" onclick="doLogin()">Entrar →</button>
-    <div class="lc-err" id="loginErr">Usuário ou senha incorretos.</div>
-    <div class="lc-users">
-      <div class="lcu-title">Perfis de acesso</div>
-      <div class="lcu-row" onclick="fill('admin','gx2026')"><div class="lcu-dot" style="background:#a78bfa"></div><span class="lcu-name">admin</span><span class="lcu-role">Administrador — acesso total</span></div>
-      <div class="lcu-row" onclick="fill('editor','gx2026')"><div class="lcu-dot" style="background:#4ade80"></div><span class="lcu-name">editor</span><span class="lcu-role">Editor — criar e concluir</span></div>
-      <div class="lcu-row" onclick="fill('design','gx2026')"><div class="lcu-dot" style="background:#60a5fa"></div><span class="lcu-name">design</span><span class="lcu-role">Designer — visualizar e concluir</span></div>
-      <div class="lcu-row" onclick="fill('leitor','gx2026')"><div class="lcu-dot" style="background:#fb923c"></div><span class="lcu-name">leitor</span><span class="lcu-role">Leitor — somente visualização</span></div>
-    </div>
+    <div class="lc-err" id="loginErr">Login ou senha incorretos.</div>
   </div>
 </div>
 
 <!-- APP -->
 <div id="app">
   <div class="layout">
-    <div class="sidenav">
-      <div class="sn-logo">GX</div>
-      <div class="sn-ico active">
-        <svg viewBox="0 0 16 16" fill="none"><rect x="1.5" y="2.5" width="13" height="12" rx="1.5" stroke-width="1.2"/><path d="M5 1.5v2M11 1.5v2M1.5 6.5h13" stroke-width="1.2" stroke-linecap="round"/></svg>
-        <div class="sn-tooltip">Calendário editorial</div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sb-brand">
+        <div class="sb-logo-row">
+          <div class="sb-badge">GX</div>
+          <div>
+            <div class="sb-appname">Dashboard Mkt <span>Gigamix</span></div>
+          </div>
+        </div>
+        <div class="sb-user-row">
+          <div class="sb-avatar" id="sbAvatar">MK</div>
+          <div><div class="sb-username" id="sbUsername">—</div><div class="sb-role" id="sbRole">—</div></div>
+        </div>
       </div>
-      <div class="sn-ico">
-        <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke-width="1.2"/><path d="M8 5v3.5l2 2" stroke-width="1.2" stroke-linecap="round"/></svg>
-        <div class="sn-tooltip">Em breve: Histórico de publicações</div>
+
+      <div class="sb-nav">
+        <div class="sb-section">Visualizar</div>
+        <div class="sb-item active" id="filterTodos" onclick="setFilter('todos',this)">
+          <div class="sb-item-dot" style="background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.2)"></div>
+          <span class="sb-item-label">Todos os conteúdos</span>
+        </div>
+
+        <div class="sb-section">Tipo de conteúdo</div>
+        <div class="sb-item" id="filterConteudo" onclick="setFilter('conteudo',this)">
+          <div class="sb-item-dot dot-conteudo"></div>
+          <span class="sb-item-label">Conteúdo orgânico</span>
+          <span class="sb-item-count count-conteudo" id="cntConteudo">0</span>
+        </div>
+        <div class="sb-item" id="filterCampanha" onclick="setFilter('campanha',this)">
+          <div class="sb-item-dot dot-campanha"></div>
+          <span class="sb-item-label">Material de campanha</span>
+          <span class="sb-item-count count-campanha" id="cntCampanha">0</span>
+        </div>
+        <div class="sb-item" id="filterDarkpost" onclick="setFilter('darkpost',this)">
+          <div class="sb-item-dot dot-darkpost"></div>
+          <span class="sb-item-label">Dark post</span>
+          <span class="sb-item-count count-darkpost" id="cntDarkpost">0</span>
+        </div>
+
+        <div class="sb-section">Período</div>
+        <div class="sb-item" id="navMaio" onclick="goMonth('2026-05',this)">
+          <div class="sb-item-dot" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.15)"></div>
+          <span class="sb-item-label">Maio 2026</span>
+        </div>
+        <div class="sb-item" id="navJunho" onclick="goMonth('2026-06',this)">
+          <div class="sb-item-dot" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.15)"></div>
+          <span class="sb-item-label">Junho 2026</span>
+        </div>
+        <div class="sb-item" id="navJulho" onclick="goMonth('2026-07',this)">
+          <div class="sb-item-dot" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.15)"></div>
+          <span class="sb-item-label">Julho 2026</span>
+        </div>
       </div>
-      <div class="sn-ico">
-        <svg viewBox="0 0 16 16" fill="none"><path d="M2 11.5l3.5-3.5 3 3 5-6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div class="sn-tooltip">Em breve: Métricas de engajamento</div>
-      </div>
-      <div class="sn-sep"></div>
-      <div class="sn-ico">
-        <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2.5" width="12" height="11" rx="1.5" stroke-width="1.2"/><path d="M5 6.5h6M5 9h4" stroke-width="1.2" stroke-linecap="round"/></svg>
-        <div class="sn-tooltip">Em breve: Biblioteca de conteúdos</div>
-      </div>
-      <div class="sn-spacer"></div>
-      <div class="sn-avatar" id="snAvatar" onclick="doLogout()" title="Clique para sair">
-        <span id="snAvatarTxt" style="font-size:10px;font-weight:600;color:#fff"></span>
-        <div class="sn-role-dot" id="snRoleDot"></div>
+
+      <div class="sb-bottom">
+        <div class="logout-row" onclick="doLogout()">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M6 2H3a1 1 0 00-1 1v10a1 1 0 001 1h3M10 11l3-3-3-3M13 8H6" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="logout-label">Sair da plataforma</span>
+        </div>
       </div>
     </div>
 
+    <!-- MAIN -->
     <div class="main-area">
-      <div class="perm-banner" id="permBanner"></div>
       <div class="topbar">
         <div class="tb-left">
-          <div class="tb-title">Calendário Editorial</div>
-          <div class="tb-tag" id="tbTag">—</div>
+          <div class="tb-title" id="tbTitle">Calendário Editorial</div>
+          <div class="tb-sep">·</div>
+          <div class="tb-filter" id="tbFilter">Todos os conteúdos</div>
         </div>
         <div class="tb-right">
           <button class="nav-btn" onclick="changeMonth(-1)">‹</button>
           <div class="month-pill" id="monthLabel">—</div>
           <button class="nav-btn" onclick="changeMonth(1)">›</button>
-          <button class="add-btn" id="addBtn" onclick="openAdd()">＋ Novo</button>
-          <div class="user-chip" onclick="doLogout()" title="Clique para sair">
-            <div class="uc-dot" id="ucDot"></div>
-            <div><div class="uc-name" id="ucName">—</div><div class="uc-role" id="ucRole">—</div></div>
-          </div>
+          <button class="add-btn" id="addBtn" onclick="openAdd()">＋ Novo conteúdo</button>
         </div>
       </div>
 
       <div class="content">
         <div class="cal-wrap">
           <div class="stats" id="statsRow"></div>
-          <div class="legend-row">
-            <div class="leg"><div class="leg-d" style="background:#8b5cf6"></div>Instagram</div>
-            <div class="leg"><div class="leg-d" style="background:#ec4899"></div>Carrossel</div>
-            <div class="leg"><div class="leg-d" style="background:#f97316"></div>Reels</div>
-            <div class="leg"><div class="leg-d" style="background:#3b82f6"></div>Facebook</div>
-            <div class="leg"><div class="leg-d" style="background:#ef4444"></div>YouTube</div>
-            <div class="leg"><div class="leg-d" style="background:#22c55e"></div>Story</div>
-            <div class="leg"><div class="leg-d" style="background:#eab308"></div>Blog</div>
-            <div class="leg"><div class="leg-d" style="background:#14b8a6"></div>E-mail</div>
-          </div>
           <div class="wdays"><div class="wd">Dom</div><div class="wd">Seg</div><div class="wd">Ter</div><div class="wd">Qua</div><div class="wd">Qui</div><div class="wd">Sex</div><div class="wd">Sáb</div></div>
           <div class="cgrid" id="calGrid"></div>
         </div>
@@ -274,19 +310,25 @@ body{font-family:'Inter',-apple-system,sans-serif;height:100vh;overflow:hidden;-
             <div class="add-form-wrap" id="addFormWrap">
               <div class="af-sec">Adicionar conteúdo</div>
               <div class="af-row"><label class="af-label">Título</label><input id="afTitle" class="af-input" type="text" placeholder="Ex: Post sobre Silício no milho"></div>
+              <div class="af-row"><label class="af-label">Tipo</label>
+                <select id="afTipo" class="af-select">
+                  <option value="conteudo">Conteúdo orgânico</option>
+                  <option value="campanha">Material de campanha</option>
+                  <option value="darkpost">Dark post</option>
+                </select>
+              </div>
               <div class="af-row"><label class="af-label">Canal</label>
                 <select id="afCanal" class="af-select">
                   <option value="instagram">Instagram</option><option value="carrossel">Carrossel</option>
                   <option value="reels">Reels</option><option value="facebook">Facebook</option>
-                  <option value="story">Story</option><option value="youtube">YouTube</option>
-                  <option value="blog">Blog</option><option value="email">E-mail</option>
+                  <option value="story">Story</option><option value="dark post">Dark Post</option>
                 </select>
               </div>
               <div class="af-row"><label class="af-label">Pauta / legenda</label><textarea id="afDesc" class="af-textarea" placeholder="Copy, headline, observações..."></textarea></div>
               <div class="af-row"><label class="af-label">Status</label>
                 <select id="afStatus" class="af-select"><option value="ideia">Ideia</option><option value="agendado">Agendado</option></select>
               </div>
-              <button class="af-save" onclick="saveContent()">Salvar</button>
+              <button class="af-save" onclick="saveContent()">Salvar conteúdo</button>
             </div>
           </div>
         </div>
@@ -296,30 +338,14 @@ body{font-family:'Inter',-apple-system,sans-serif;height:100vh;overflow:hidden;-
 </div>
 
 <script>
-const USERS={
-  admin: {pass:'gx2026',role:'Administrador',color:'#a78bfa',canAdd:true, canDone:true},
-  editor:{pass:'gx2026',role:'Editor',       color:'#4ade80',canAdd:true, canDone:true},
-  design:{pass:'gx2026',role:'Designer',     color:'#60a5fa',canAdd:false,canDone:true},
-  leitor:{pass:'gx2026',role:'Leitor',       color:'#fb923c',canAdd:false,canDone:false},
-};
-const PERM={
-  admin: {cls:'perm-admin', msg:'👑 Administrador — acesso total: criar, marcar e gerenciar conteúdos'},
-  editor:{cls:'perm-editor',msg:'✏️ Editor — pode criar conteúdos e marcar como concluídos'},
-  design:{cls:'perm-design',msg:'🎨 Designer — pode visualizar e marcar conteúdos como concluídos'},
-  leitor:{cls:'perm-leitor',msg:'👁 Leitor — somente visualização do calendário'},
-};
+// ── AUTH ──────────────────────────────────────────────
+const CREDS = { user:'mktgigamix', pass:'silicio@2025' };
 
-const MONTHS_PT=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-let currentUser=null,currentYear=2026,currentMonth=4,selectedKey=null;
-let extraData={},doneIds=new Set();
-
-function fill(u,p){document.getElementById('lUser').value=u;document.getElementById('lPass').value=p;}
 function doLogin(){
-  const u=document.getElementById('lUser').value.trim().toLowerCase();
+  const u=document.getElementById('lUser').value.trim();
   const p=document.getElementById('lPass').value;
-  if(USERS[u]&&USERS[u].pass===p){
-    currentUser={name:u,...USERS[u]};
-    sessionStorage.setItem('gx_user',JSON.stringify(currentUser));
+  if(u===CREDS.user && p===CREDS.pass){
+    sessionStorage.setItem('gx_auth','1');
     document.getElementById('loginScreen').style.display='none';
     document.getElementById('app').style.cssText='display:flex;flex-direction:column';
     init();
@@ -330,50 +356,104 @@ function doLogin(){
 }
 document.getElementById('lPass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
 document.getElementById('lUser').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
-function doLogout(){sessionStorage.removeItem('gx_user');location.reload();}
+function doLogout(){sessionStorage.removeItem('gx_auth');location.reload();}
 
-function applyUser(){
-  const u=currentUser,perm=PERM[u.name]||PERM.leitor;
-  document.getElementById('snAvatarTxt').textContent=u.name.slice(0,2).toUpperCase();
-  document.getElementById('snAvatar').style.background=u.color;
-  document.getElementById('snRoleDot').style.background=u.color;
-  document.getElementById('ucDot').style.background=u.color;
-  document.getElementById('ucName').textContent=u.name;
-  document.getElementById('ucRole').textContent=u.role;
-  const ab=document.getElementById('addBtn');
-  if(!u.canAdd){ab.disabled=true;ab.title='Sem permissão para criar conteúdos';}
-  const pb=document.getElementById('permBanner');
-  pb.className='perm-banner '+perm.cls;pb.textContent=perm.msg;
-}
+// ── STATE ─────────────────────────────────────────────
+const MONTHS_PT=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+let currentYear=2026,currentMonth=4,selectedKey=null,activeFilter='todos';
+let extraData={},doneIds=new Set();
 
 function init(){
   try{extraData=JSON.parse(localStorage.getItem('gx_extra')||'{}');}catch(e){extraData={};}
   try{doneIds=new Set(JSON.parse(localStorage.getItem('gx_done')||'[]'));}catch(e){doneIds=new Set();}
-  const[y,m]=CALENDARIO.mes.split('-').map(Number);
-  currentYear=y;currentMonth=m-1;
-  applyUser();renderCalendar();
+  document.getElementById('sbAvatar').textContent='MK';
+  document.getElementById('sbUsername').textContent='mktgigamix';
+  document.getElementById('sbRole').textContent='Marketing · Gigamix';
+  updateCounts();
+  renderCalendar();
 }
+
 function saveExtra(){try{localStorage.setItem('gx_extra',JSON.stringify(extraData));}catch(e){}}
 function saveDone(){try{localStorage.setItem('gx_done',JSON.stringify([...doneIds]));}catch(e){}}
-function getAllItems(key){return[...(CALENDARIO.posts[key]||[]),...(extraData[key]||[])];}
+
+function getAllItems(key){
+  return [...(CALENDARIO.posts[key]||[]),...(extraData[key]||[])];
+}
+
+function getFilteredItems(key){
+  const all=getAllItems(key);
+  if(activeFilter==='todos')return all;
+  return all.filter(i=>i.tipo===activeFilter);
+}
+
+function setFilter(f,el){
+  activeFilter=f;
+  document.querySelectorAll('.sb-item').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  const labels={todos:'Todos os conteúdos',conteudo:'Conteúdo orgânico',campanha:'Material de campanha',darkpost:'Dark post'};
+  document.getElementById('tbFilter').textContent=labels[f]||f;
+  if(selectedKey){const p=selectedKey.split('-');openDay(selectedKey,parseInt(p[2]));}
+  renderCalendar();
+}
+
+function goMonth(mes,el){
+  const[y,m]=mes.split('-').map(Number);
+  currentYear=y;currentMonth=m-1;
+  closeSidebar();renderCalendar();
+}
+
+function updateCounts(){
+  let c=0,ca=0,d=0;
+  Object.keys(CALENDARIO.posts).forEach(k=>{
+    CALENDARIO.posts[k].forEach(i=>{
+      if(i.tipo==='conteudo')c++;
+      else if(i.tipo==='campanha')ca++;
+      else if(i.tipo==='darkpost')d++;
+    });
+  });
+  Object.keys(extraData).forEach(k=>{
+    (extraData[k]||[]).forEach(i=>{
+      if(i.tipo==='conteudo')c++;
+      else if(i.tipo==='campanha')ca++;
+      else if(i.tipo==='darkpost')d++;
+    });
+  });
+  document.getElementById('cntConteudo').textContent=c;
+  document.getElementById('cntCampanha').textContent=ca;
+  document.getElementById('cntDarkpost').textContent=d;
+}
 
 function renderStats(){
   let tot=0,done=0,pend=0,ideia=0;
   for(let d=1;d<=31;d++){
     const k=`${currentYear}-${String(currentMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    getAllItems(k).forEach(i=>{tot++;if(doneIds.has(i.id))done++;else if(i.status==='agendado')pend++;else ideia++;});
+    getFilteredItems(k).forEach(i=>{tot++;if(doneIds.has(i.id))done++;else if(i.status==='agendado')pend++;else ideia++;});
   }
   document.getElementById('statsRow').innerHTML=`
-    <div class="sc"><div class="sc-accent" style="background:#8b5cf6"></div><div class="sc-lbl">Total</div><div class="sc-val" style="color:#a78bfa">${tot}</div><div class="sc-sub">conteúdos</div></div>
-    <div class="sc"><div class="sc-accent" style="background:#4ade80"></div><div class="sc-lbl">Concluídos</div><div class="sc-val">${done}</div><div class="sc-sub">${tot?Math.round(done/tot*100):0}%</div></div>
-    <div class="sc"><div class="sc-accent" style="background:#fbbf24"></div><div class="sc-lbl">Agendados</div><div class="sc-val">${pend}</div><div class="sc-sub">prontos</div></div>
-    <div class="sc"><div class="sc-accent" style="background:#c4b5fd"></div><div class="sc-lbl">Ideias</div><div class="sc-val">${ideia}</div><div class="sc-sub">em dev</div></div>`;
+    <div class="sc"><div class="sc-stripe" style="background:#818cf8"></div><div class="sc-lbl">Neste mês</div><div class="sc-val" style="color:#a5b4fc">${tot}</div><div class="sc-sub">conteúdos</div></div>
+    <div class="sc"><div class="sc-stripe" style="background:#4ade80"></div><div class="sc-lbl">Concluídos</div><div class="sc-val">${done}</div><div class="sc-sub">${tot?Math.round(done/tot*100):0}%</div></div>
+    <div class="sc"><div class="sc-stripe" style="background:#fbbf24"></div><div class="sc-lbl">Agendados</div><div class="sc-val">${pend}</div><div class="sc-sub">prontos</div></div>
+    <div class="sc"><div class="sc-stripe" style="background:#c4b5fd"></div><div class="sc-lbl">Ideias</div><div class="sc-val">${ideia}</div><div class="sc-sub">em dev</div></div>`;
 }
 
 function renderCalendar(){
   renderStats();
   const label=`${MONTHS_PT[currentMonth]} ${currentYear}`;
-  document.getElementById('monthLabel').textContent=label;document.getElementById('tbTag').textContent=label;
+  document.getElementById('monthLabel').textContent=label;
+  // highlight sidebar month nav
+  ['navMaio','navJunho','navJulho'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el)el.classList.remove('active');
+  });
+  const mMap={'4':'navMaio','5':'navJunho','6':'navJulho'};
+  const nav=mMap[String(currentMonth)];
+  if(nav){
+    const el=document.getElementById(nav);
+    if(el&&!['filterTodos','filterConteudo','filterCampanha','filterDarkpost'].includes(document.querySelector('.sb-item.active')?.id)){
+      // don't override filter active
+    }
+  }
+
   const first=new Date(currentYear,currentMonth,1),sd=first.getDay();
   const dim=new Date(currentYear,currentMonth+1,0).getDate(),today=new Date();
   const grid=document.getElementById('calGrid');grid.innerHTML='';
@@ -381,20 +461,27 @@ function renderCalendar(){
   for(let i=0;i<sd;i++){const c=document.createElement('div');c.className='cc om';c.innerHTML=`<span class="dn">${pd-sd+i+1}</span>`;grid.appendChild(c);}
   for(let d=1;d<=dim;d++){
     const key=`${currentYear}-${String(currentMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const items=getAllItems(key);
+    const items=getFilteredItems(key);
+    const allItems=getAllItems(key);
     const isT=today.getFullYear()===currentYear&&today.getMonth()===currentMonth&&today.getDate()===d;
-    const isS=key===selectedKey,allDone=items.length>0&&items.every(i=>doneIds.has(i.id));
+    const isS=key===selectedKey;
+    const allDone=allItems.length>0&&allItems.every(i=>doneIds.has(i.id));
+    const hasContent=items.length>0;
     const c=document.createElement('div');
-    c.className='cc'+(items.length?' click hc':'')+(isT?' today':'')+(isS?' sel':'')+(allDone?' done-day':'');
+    c.className='cc'+(hasContent?' click hc':'')+(isT?' today':'')+(isS?' sel':'')+(allDone?' done-day':'');
     c.innerHTML=`<span class="dn">${d}</span>`;
     items.slice(0,3).forEach(item=>{
       const p=document.createElement('span');
-      p.className=`pill canal-${item.canal}`+(doneIds.has(item.id)?' done-pill':'');
+      let cls=`pill canal-${item.canal}`;
+      if(item.tipo==='campanha')cls='pill tipo-campanha';
+      if(item.tipo==='darkpost')cls='pill tipo-darkpost';
+      if(doneIds.has(item.id))cls+=' done-pill';
+      p.className=cls;
       p.textContent=item.title.length>22?item.title.slice(0,22)+'…':item.title;
       c.appendChild(p);
     });
     if(items.length>3){const m=document.createElement('span');m.style.cssText='font-size:8px;color:rgba(255,255,255,0.2);display:block;margin-top:2px';m.textContent=`+${items.length-3} mais`;c.appendChild(m);}
-    if(items.length)c.onclick=()=>openDay(key,d);
+    if(hasContent)c.onclick=()=>openDay(key,d);
     grid.appendChild(c);
   }
   const t2=sd+dim,rem=t2%7===0?0:7-(t2%7);
@@ -403,26 +490,29 @@ function renderCalendar(){
 
 function openDay(key,d){
   selectedKey=key;renderCalendar();
-  const items=getAllItems(key);
+  const items=getFilteredItems(key);
   document.getElementById('dtDate').textContent=`${d} de ${MONTHS_PT[currentMonth]} de ${currentYear}`;
   document.getElementById('dtWeek').textContent=CALENDARIO.semanas[key]||'';
   const body=document.getElementById('dtBody');body.innerHTML='';
   if(!items.length){
-    body.innerHTML=`<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-txt">Nenhum conteúdo para este dia.<br>${currentUser.canAdd?'Use "+ Novo" para adicionar.':'Sem conteúdo programado.'}</div></div>`;
+    body.innerHTML=`<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-txt">Nenhum conteúdo visível<br>com o filtro atual.</div></div>`;
   } else {
     items.forEach(item=>{
       const isDone=doneIds.has(item.id);
       const badge=isDone?'<span class="sbadge sb-done">✓ Concluído</span>':item.status==='ideia'?'<span class="sbadge sb-i">Ideia</span>':'<span class="sbadge sb-p">Agendado</span>';
-      const canDone=currentUser.canDone;
-      const card=document.createElement('div');card.className='dcard'+(isDone?' is-done':'');
+      let tipoCls='tipo-conteudo-card';
+      if(item.tipo==='campanha')tipoCls='tipo-campanha-card';
+      if(item.tipo==='darkpost')tipoCls='tipo-darkpost-card';
+      const card=document.createElement('div');
+      card.className=`dcard ${tipoCls}`+(isDone?' is-done':'');
       card.innerHTML=`
         <div class="dc-top"><span class="pill canal-${item.canal}" style="display:inline-block;margin:0">${item.canal.toUpperCase()}</span>${badge}</div>
         <div class="dc-title">${item.title}</div>
         <div class="dc-obj">🎯 ${item.objetivo||'—'}</div>
         ${item.headline?`<div class="dc-sec">Headline</div><div class="dc-copy" style="position:relative">${nl(item.headline)}<button class="copy-btn" onclick="cp(this,\`${es(item.headline)}\`)">copiar</button></div>`:''}
         ${item.subtext?`<div class="dc-sec">Subtext</div><div class="dc-copy">${nl(item.subtext)}</div>`:''}
-        ${item.legenda?`<div class="dc-sec">Legenda</div><div class="dc-copy" style="position:relative">${nl(item.legenda)}<button class="copy-btn" onclick="cp(this,\`${es(item.legenda)}\`)">copiar</button></div>`:''}
-        <button class="done-btn ${isDone?'undone-btn':''}" ${!canDone?'disabled title="Sem permissão"':''} onclick="${canDone?`toggleDone(${item.id},'${key}',${d})`:''}">${isDone?'↩ Desfazer conclusão':'✓ Marcar como concluído'}</button>`;
+        ${item.legenda?`<div class="dc-sec">Legenda / Briefing</div><div class="dc-copy" style="position:relative">${nl(item.legenda)}<button class="copy-btn" onclick="cp(this,\`${es(item.legenda)}\`)">copiar</button></div>`:''}
+        <button class="done-btn ${isDone?'undone':''}" onclick="toggleDone(${item.id},'${key}',${d})">${isDone?'↩ Desfazer conclusão':'✓ Marcar como concluído'}</button>`;
       body.appendChild(card);
     });
   }
@@ -433,10 +523,9 @@ function openDay(key,d){
 function nl(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>');}
 function es(s){return s.replace(/`/g,'\\`').replace(/\$/g,'\\$');}
 function cp(btn,t){navigator.clipboard.writeText(t).then(()=>{btn.textContent='✓';setTimeout(()=>btn.textContent='copiar',2000);});}
-function toggleDone(id,key,d){if(!currentUser.canDone)return;if(doneIds.has(id))doneIds.delete(id);else doneIds.add(id);saveDone();renderCalendar();openDay(key,d);}
+function toggleDone(id,key,d){if(doneIds.has(id))doneIds.delete(id);else doneIds.add(id);saveDone();renderCalendar();openDay(key,d);}
 
 function openAdd(){
-  if(!currentUser.canAdd)return;
   if(!selectedKey){
     const t=new Date(),key=`${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,'0')}-${String(t.getDate()).padStart(2,'0')}`;
     selectedKey=key;
@@ -447,21 +536,26 @@ function openAdd(){
   document.getElementById('addFormWrap').style.display='block';document.getElementById('afTitle').focus();
 }
 function saveContent(){
-  if(!currentUser.canAdd)return;
   const title=document.getElementById('afTitle').value.trim();if(!title)return;
-  const canal=document.getElementById('afCanal').value,desc=document.getElementById('afDesc').value.trim();
+  const tipo=document.getElementById('afTipo').value;
+  const canal=document.getElementById('afCanal').value;
+  const desc=document.getElementById('afDesc').value.trim();
   const status=document.getElementById('afStatus').value;
   if(!extraData[selectedKey])extraData[selectedKey]=[];
-  extraData[selectedKey].push({id:Date.now(),title,canal,status,objetivo:'Conteúdo adicional',legenda:desc});
-  saveExtra();document.getElementById('afTitle').value='';document.getElementById('afDesc').value='';
+  extraData[selectedKey].push({id:Date.now(),title,tipo,canal,status,objetivo:'Conteúdo adicional',legenda:desc});
+  saveExtra();updateCounts();
+  document.getElementById('afTitle').value='';document.getElementById('afDesc').value='';
   document.getElementById('addFormWrap').style.display='none';
   const parts=selectedKey.split('-');openDay(selectedKey,parseInt(parts[2]));renderCalendar();
 }
 function closeSidebar(){selectedKey=null;document.getElementById('detailPanel').classList.remove('open');renderCalendar();}
 function changeMonth(dir){currentMonth+=dir;if(currentMonth>11){currentMonth=0;currentYear++;}if(currentMonth<0){currentMonth=11;currentYear--;}closeSidebar();renderCalendar();}
 
-const saved=sessionStorage.getItem('gx_user');
-if(saved){try{currentUser=JSON.parse(saved);document.getElementById('loginScreen').style.display='none';document.getElementById('app').style.cssText='display:flex;flex-direction:column';init();}catch(e){}}
+if(sessionStorage.getItem('gx_auth')==='1'){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('app').style.cssText='display:flex;flex-direction:column';
+  init();
+}
 </script>
 </body>
 </html>
