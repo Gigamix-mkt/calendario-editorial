@@ -1,250 +1,363 @@
 const CALENDARIO = {
   mes: '2026-05',
   label: 'Maio 2026',
-  semanas: {
-    '2026-05-04':'Semana 1 — Lançamento da campanha',
-    '2026-05-06':'Semana 1 — Lançamento da campanha',
-    '2026-05-08':'Semana 1 — Lançamento da campanha',
-    '2026-05-11':'Semana 2 — Campanha Protocolo Blindado',
-    '2026-05-13':'Semana 2 — Prova social',
-    '2026-05-15':'Semana 2 — Objeção de preço',
-    '2026-05-18':'Semana 3 — Autoridade científica',
-    '2026-05-20':'Semana 3 — Campanha · Combos',
-    '2026-05-22':'Semana 3 — Conversão',
-    '2026-05-25':'Semana 4 — Branding premium',
-    '2026-05-27':'Semana 4 — Pipeline treinamento',
-    '2026-05-29':'Semana 4 — Fechamento de maio',
-    '2026-06-03':'Semana 1 Junho — Mecanismo Scudero',
-    '2026-06-10':'Semana 2 Junho — Tripé dos produtos',
-    '2026-06-17':'Semana 3 Junho — Diferencial formulação',
-    '2026-06-24':'Semana 4 Junho — Urgência pré-safra',
-    '2026-07-08':'Semana 2 Julho — Autoridade científica',
-    '2026-07-15':'Semana 3 Julho — Planejamento safra',
-    '2026-07-22':'Semana 4 Julho — Reta final campanha',
-    '2026-07-28':'Semana 4 Julho — Countdown encerramento',
-  },
+
   posts: {
-    /* ─── MAIO ─────────────────────────────────────────── */
-    '2026-05-04':[{
-      id:101, tipo:'conteudo', title:'Nem todo Silício é igual. O seu está sendo absorvido?',
-      canal:'instagram', status:'agendado', objetivo:'Educar — Quebrar objeção principal',
-      headline:'Nem todo Silício é igual.\nO seu está sendo absorvido?',
-      subtext:'Tecnologia que entra na planta. Resultado que aparece na lavoura.',
-      legenda:`Muito do que é vendido como Silício no mercado é, na verdade, SiO₂ — silicato. Uma molécula que a planta simplesmente não consegue absorver.
 
-A Gigamix desenvolveu uma tecnologia onde a molécula de Silício é reduzida a um nível menor que uma bactéria. Absorção real.
+    // ─── 05/05 ─ SEG ─────────────────────────────────────────────
+    '2026-05-05': [
+      {
+        id: 501,
+        title: 'Carrossel — Nem todo Silício chega na sua planta',
+        canal: 'instagram',
+        formato: 'carrossel',
+        status: 'agendado',
+        objetivo: 'Educação — quebrar objeção de mercado',
+        copy: 'Nem todo Silício\nchega na sua planta.',
+        subtext: 'Entenda por que o produto que você compra pode não estar fazendo nada.',
+        slides: [
+          {
+            numero: 1,
+            tipo: 'capa',
+            copy: 'Nem todo Silício\nchega na sua planta.',
+            subtext: 'Entenda por que o produto que você compra pode não estar fazendo nada.'
+          },
+          {
+            numero: 2,
+            tipo: 'problema',
+            copy: 'O solo tem Silício.\nMas a planta não consegue beber.',
+            texto: 'O Silício está em quase todo lugar — na areia, nas rochas, no solo. O problema é que, nessa forma, ele está "travado". A planta não tem como absorver.\n\nPara entrar na planta, o Silício precisa estar dissolvido numa forma específica. É como tentar beber água que está congelada.'
+          },
+          {
+            numero: 3,
+            tipo: 'mecanismo',
+            copy: 'A raiz tem uma porta.\nSó entra quem tem o tamanho certo.',
+            texto: 'A planta absorve Silício por transportadores específicos na raiz — e só aceitam uma forma: o ácido monossilícico.\n\nSe o produto não entrega Silício nessa forma, a raiz simplesmente não abre a porta. Não importa quanto você aplicou.'
+          },
+          {
+            numero: 4,
+            tipo: 'sinal_de_alerta',
+            copy: 'Se entope o bico,\nnão entra na planta.',
+            texto: 'Produto de Silício que precisa ser coado antes de ir pro tanque — ou que gruda no filtro do pulverizador — está te dando um recado:\n\nEsse material não está na forma que a planta absorve.\n\nO que não dissolve direito na calda, não dissolve na planta.'
+          },
+          {
+            numero: 5,
+            tipo: 'resultado',
+            copy: 'Quando entra de verdade,\na planta monta seu próprio escudo.',
+            texto: 'O Silício absorvido se deposita na camada externa das folhas — como uma armadura natural. Essa camada dificulta a entrada de fungos, reduz o ataque de insetos e ajuda a planta a segurar água em períodos de seca.\n\nNão é efeito de prateleira. É resultado dentro da lavoura.'
+          },
+          {
+            numero: 6,
+            tipo: 'cta',
+            copy: 'Gigamix formula Silício\npra entrar na planta.\nNão só pra constar no rótulo.',
+            texto: 'Líquido, granulado ou pó — cada produto Gigamix é desenvolvido para entregar Silício na forma que a planta consegue absorver e usar.\n\n📲 Fala com um RC Gigamix e descobre o que o seu Silício está entregando de verdade.'
+          }
+        ],
+        legenda: 'Tem Silício no solo. Tem Silício no rótulo. Mas será que tem Silício dentro da sua planta?\n\nA planta só absorve o elemento de uma forma específica. Se o produto não entrega assim, não importa a dose — não entra.\n\n📲 Fala com um RC Gigamix e entende o que você está realmente aplicando na sua lavoura.',
+        prompt_imagem: {
+          prompt: 'Split field photography: left side shows a vibrant lush soybean crop with deep green glossy leaves under golden morning light; right side shows the same field with pale dull stressed plants. Clean natural dividing line between both sides. Realistic agricultural photography.',
+          style: 'editorial split agricultural photography',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, cartoon, infographic, people, arrows'
+        }
+      }
+    ],
 
-22 anos de pesquisa. Resultado que aparece na lavoura.
+    // ─── 07/05 ─ QUA ─────────────────────────────────────────────
+    '2026-05-07': [
+      {
+        id: 502,
+        title: 'Card — Scudero Ultra | Escudo perfeito',
+        canal: 'instagram',
+        formato: 'card_estatico',
+        status: 'agendado',
+        objetivo: 'Produto — Scudero Ultra | Aquecimento Safra Protegida',
+        copy: 'Escudo perfeito para sua planta.\nProteção física. Resistência real.',
+        legenda: 'Quando a planta tem um escudo de verdade, ela não gasta energia lutando. Ela gasta energia produzindo.\n\nO Scudero Ultra ativa os mecanismos naturais de defesa da planta — espessando a parede celular e induzindo resistência sistêmica contra patógenos e estresse hídrico.\n\nSilício real. Absorção garantida. Resultado visível.\n\n💬 Fala com a gente e descobre como encaixar o Scudero no seu manejo.',
+        prompt_imagem: {
+          prompt: 'Wide shot of a healthy soybean field at sunrise, dense uniform canopy, strong vivid green, morning mist near the soil, warm golden side light casting long shadows between rows, sense of vitality and strength, cinematic depth of field. No text, no product.',
+          style: 'cinematic agricultural photography',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, cartoon, bottle, label, people, drone view'
+        }
+      }
+    ],
 
-🌱 Quer saber se o Silício que você usa realmente funciona?
+    // ─── 09/05 ─ SEX ─────────────────────────────────────────────
+    '2026-05-09': [
+      {
+        id: 503,
+        title: 'Teaser — Safra Protegida | 11.05',
+        canal: 'instagram',
+        formato: 'card_estatico',
+        status: 'agendado',
+        objetivo: 'Teaser campanha Safra Protegida',
+        copy: 'Algo está chegando.\nSua safra vai agradecer.\n11.05.26',
+        legenda: 'O planejamento que protege a lavoura começa antes do plantio.\n\nA maioria decide o manejo quando o problema já apareceu. Os melhores resultados que a gente viu em campo têm uma coisa em comum: decisão tomada cedo.\n\nNa semana que vem, a Gigamix apresenta algo desenvolvido pra quem pensa assim.\n\nVocê já sabe o que vai aplicar na próxima safra?',
+        prompt_imagem: {
+          prompt: 'Dramatic aerial view of a vast soybean field at dusk, thick golden fog rolling between the rows, deep teal sky contrasting with warm orange horizon, moody and cinematic atmosphere, sense of anticipation and scale. No text, no product.',
+          style: 'cinematic aerial agricultural photography, moody',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, people, bottle, bright daylight, cartoon'
+        }
+      }
+    ],
 
-👇 Chama no WhatsApp — link na bio.`
-    }],
-    '2026-05-06':[{
-      id:102, tipo:'conteudo', title:'Ferrugem, Míldio, Oídio — Um produto, cinco ameaças',
-      canal:'instagram', status:'agendado', objetivo:'Autoridade técnica — Scudero Ultra',
-      headline:'Um produto. Cinco ameaças controladas.',
-      subtext:'Scudero Ultra — escudo físico e químico para sua soja.',
-      legenda:`O Scudero Ultra não é um fungicida. É um fertilizante foliar à base de Silício que induz resistência natural na planta.
+    // ─── 12/05 ─ SEG ─────────────────────────────────────────────
+    '2026-05-12': [
+      {
+        id: 504,
+        title: 'Carrossel — Lançamento Safra Protegida',
+        canal: 'instagram',
+        formato: 'carrossel',
+        status: 'agendado',
+        objetivo: 'Lançamento campanha — apresentar protocolo e combos',
+        copy: 'Safra Protegida.\nO protocolo que sua lavoura precisa.',
+        slides: [
+          { numero: 1, tipo: 'capa', copy: 'Safra Protegida.\nO protocolo que sua lavoura precisa.' },
+          { numero: 2, tipo: 'problema', copy: 'Uma lavoura sem protocolo\né uma lavoura aberta para perda.', texto: 'Defesa. Resistência. Raiz.\nOs três pilares que precisam trabalhar juntos.' },
+          { numero: 3, tipo: 'produto', produto: 'Scudero Ultra', pilar: 'O escudo', texto: 'Proteção física e resistência sistêmica do início ao fim do ciclo.' },
+          { numero: 4, tipo: 'produto', produto: 'Plus', pilar: 'A resistência', texto: 'Silício em pó que fortalece o metabolismo e a área foliar da sua cultura.' },
+          { numero: 5, tipo: 'produto', produto: 'RZN', pilar: 'A base', texto: 'Raiz forte, vigor inicial, desenvolvimento uniforme desde o plantio.' },
+          { numero: 6, tipo: 'combos_cta', combos: [
+            { produtos: 'Scudero + Plus + RZN', condicao: 'Condição especial', destaque: true },
+            { produtos: 'Scudero + Plus', condicao: 'Condição especial', destaque: false },
+            { produtos: 'Plus + RZN', condicao: 'Condição especial', destaque: false },
+            { produtos: 'Scudero + RZN', condicao: 'Condição especial', destaque: false }
+          ]}
+        ],
+        legenda: 'Proteção não é um produto. É um protocolo.\n\nApresentamos a campanha Safra Protegida — três produtos desenvolvidos para trabalhar juntos e cobrir o que sua lavoura mais precisa: defesa, resistência e estrutura radicular.\n\nQuem fecha o protocolo completo garante uma condição especial.\n\n📩 Quer saber qual combo faz sentido para a sua cultura? Fala com a gente.\n🔗 Link na bio.',
+        prompt_imagem: {
+          prompt: 'Three distinct close-up crop shots arranged in a clean triptych: left panel showing dense healthy root system in dark soil, center panel showing thick glossy soybean leaf, right panel showing full soybean pod cluster ripe and uniform. Natural soft light, earthy and green tones, ultra sharp detail. No text, no product.',
+          style: 'editorial agricultural photography, triptych',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, bottle, cartoon, infographic, people'
+        }
+      }
+    ],
 
-Testado pela Fundação Agrária de Pesquisa Agropecuária: controle das 5 principais doenças da soja.
+    // ─── 14/05 ─ QUA ─────────────────────────────────────────────
+    '2026-05-14': [
+      {
+        id: 505,
+        title: 'Card — Scudero Ultra | Aprofundamento técnico',
+        canal: 'instagram',
+        formato: 'card_estatico',
+        status: 'agendado',
+        objetivo: 'Produto Scudero Ultra — aprofundamento técnico acessível',
+        copy: 'O Scudero não só protege.\nEle ensina a planta a se defender.',
+        legenda: 'Quando aplicamos o Scudero Ultra, a planta não recebe só um nutriente. Ela recebe um sinal.\n\nO silício em suspensão concentrada ativa os mecanismos de defesa naturais — espessando a parede celular, reduzindo a entrada de patógenos e aumentando a tolerância ao estresse hídrico.\n\nNão é mágica. É bioquímica.\n\n📲 Fala com a gente para montar o protocolo da sua lavoura.',
+        prompt_imagem: {
+          prompt: 'Extreme macro photography of a soybean leaf cross-section showing thick cell wall layers, vivid green chlorophyll, water beading on the waxy surface, sharp scientific detail, soft dark background with diffused natural light. No text, no product.',
+          style: 'extreme macro botanical photography',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, bottle, cartoon, diagram, people'
+        }
+      }
+    ],
 
-🔬 Tecnologia com resultado documentado no campo.
+    // ─── 16/05 ─ SEX ─────────────────────────────────────────────
+    '2026-05-16': [
+      {
+        id: 506,
+        title: 'Card — Plus | Resistência',
+        canal: 'instagram',
+        formato: 'card_estatico',
+        status: 'agendado',
+        objetivo: 'Produto Plus — apresentação direta',
+        copy: 'Mais resistência para sua cultura.\nSimples assim.',
+        legenda: 'O Plus não complica.\n\nFertilizante mineral misto em pó com silício que induz resistência a doenças, melhora a área foliar e a qualidade dos grãos — em qualquer cultura.\n\n✔ Mais resistência a doenças\n✔ Maior tolerância ao estresse hídrico\n✔ Melhor sustentação de área foliar\n✔ Maior qualidade de grãos e frutos\n\n💬 Quer saber a dose certa pra sua cultura? Manda mensagem.',
+        prompt_imagem: {
+          prompt: 'Low angle shot looking up through a dense soybean canopy, leaves filling the frame, strong sunlight filtering through the foliage creating bright backlit translucent green tones, healthy and uniform crop stand, bokeh background of blue sky. No text, no product.',
+          style: 'low angle agricultural photography, backlit',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, bottle, cartoon, people, soil'
+        }
+      }
+    ],
 
-📲 WhatsApp — link na bio.`
-    }],
-    '2026-05-08':[{
-      id:103, tipo:'campanha', title:'CAMPANHA — Lançamento Protocolo Blindado · Teaser',
-      canal:'carrossel', status:'agendado', objetivo:'Lançar a campanha e gerar curiosidade',
-      headline:'Protocolo Blindado.\nO jeito mais completo de proteger sua lavoura.',
-      subtext:'Scudero + Plus + RZN — 10% de vantagem. Por tempo limitado.',
-      legenda:`Três produtos. Um protocolo. Proteção de ponta a ponta.
+    // ─── 19/05 ─ SEG ─────────────────────────────────────────────
+    '2026-05-19': [
+      {
+        id: 507,
+        title: 'Card — RZN | Enraizamento',
+        canal: 'instagram',
+        formato: 'card_estatico',
+        status: 'agendado',
+        objetivo: 'Produto RZN — fecha o tripé do protocolo',
+        copy: 'Enraizamento forte e sadio.\nTudo começa aqui.',
+        legenda: 'Raiz fraca é tudo que a lavoura não pode ter.\n\nO RZN garante desenvolvimento inicial uniforme — mais volume de raiz, melhor vigor, enraizamento que mantém a planta firme durante o ciclo inteiro.\n\nÉ o terceiro pilar do Protocolo Safra Protegida e o que fecha o círculo de proteção.\n\n📲 Fala com a gente antes que encerre.',
+        prompt_imagem: {
+          prompt: 'Close-up photography of a soybean plant root system freshly pulled from dark moist soil, showing abundant dense white roots with visible nodules, held against a blurred green field background, natural daylight, earthy tones contrasting with clean white roots. No text, no product.',
+          style: 'realistic agricultural photography',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, bottle, cartoon, studio background, people'
+        }
+      }
+    ],
 
-✅ Scudero Ultra — defesa contra doenças foliares
-✅ Gigamix Plus — fortalecimento e resistência
-✅ RZN — enraizamento e vigor
+    // ─── 21/05 ─ QUA ─────────────────────────────────────────────
+    '2026-05-21': [
+      {
+        id: 508,
+        title: 'Carrossel — Tabela de Combos Safra Protegida',
+        canal: 'instagram',
+        formato: 'carrossel',
+        status: 'agendado',
+        objetivo: 'Conversão — apresentar combos e condição especial',
+        copy: 'Qual combo é o seu?\n4 combinações. 1 objetivo: safra protegida.',
+        slides: [
+          { numero: 1, tipo: 'capa', copy: 'Qual combo é o seu?\n4 combinações. 1 objetivo: safra protegida.' },
+          { numero: 2, tipo: 'combo_destaque', nome: 'Protocolo Completo', produtos: ['Scudero', 'Plus', 'RZN'], condicao: 'Condição especial', descricao: 'Defesa, resistência e raiz — do V4 ao R5.', destaque: true },
+          { numero: 3, tipo: 'combo', nome: 'Defesa e Resistência', produtos: ['Scudero', 'Plus'], condicao: 'Condição especial', descricao: 'Proteção sistêmica + resistência foliar.' },
+          { numero: 4, tipo: 'combo_duplo', combos: [
+            { nome: 'Resistência e Raiz', produtos: ['Plus', 'RZN'], condicao: 'Condição especial' },
+            { nome: 'Escudo e Raiz', produtos: ['Scudero', 'RZN'], condicao: 'Condição especial' }
+          ]},
+          { numero: 5, tipo: 'cta', copy: 'Nenhuma lavoura deveria ficar sem proteção.\nFala com seu RC Gigamix.' }
+        ],
+        legenda: 'Independente do tamanho da sua área ou da sua cultura, tem um combo do Protocolo Safra Protegida feito pra você.\n\nO protocolo completo cobre os três pilares — defesa, resistência e estrutura radicular — do V4 ao R5.\n\nQuem fecha o conjunto completo garante uma condição especial.\n\n📲 Fala com seu RC Gigamix. Link na bio.',
+        prompt_imagem: {
+          prompt: 'Aerial drone shot of a large soybean field with perfectly uniform rows, strong deep green color, late afternoon golden side light casting long diagonal shadows across the rows, sense of scale and productivity, clear blue sky on the horizon. No text, no product.',
+          style: 'aerial agricultural photography, golden hour',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, bottle, cartoon, people, fog'
+        }
+      }
+    ],
 
-Combo C01: Scudero + Plus + RZN → 10% de vantagem
-Combos parciais → 5% de vantagem
+    // ─── 23/05 ─ SEX ─────────────────────────────────────────────
+    '2026-05-23': [
+      {
+        id: 509,
+        title: 'Card — Urgência | Antecipação',
+        canal: 'instagram',
+        formato: 'card_estatico',
+        status: 'agendado',
+        objetivo: 'Urgência racional — decisão por antecipação',
+        copy: 'Quem planeja antes,\npaga menos e produz mais.',
+        legenda: 'O mercado de insumos não espera.\n\nQuem decide com antecedência garante disponibilidade, melhor custo e tempo para calibrar o protocolo antes do plantio.\n\nA condição especial do Protocolo Safra Protegida é para quem age antes do problema aparecer.\n\nScudero + Plus + RZN. Defesa. Resistência. Raiz.\n\n📲 Solicite agora com seu RC Gigamix.',
+        prompt_imagem: {
+          prompt: 'Wide angle photograph of a farmer walking through a mature soybean field at golden hour, seen from behind, long shadows stretching forward, warm orange sky with dramatic clouds, sense of decision and ownership, cinematic mood. No text, no product, face not identifiable.',
+          style: 'cinematic lifestyle agricultural photography',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, bottle, cartoon, face visible, aerial view'
+        }
+      }
+    ],
 
-⏳ Por tempo limitado. Campanha válida até 30/05.
+    // ─── 26/05 ─ SEG ─────────────────────────────────────────────
+    '2026-05-26': [
+      {
+        id: 510,
+        title: 'Card — Branding | Institucional Gigamix',
+        canal: 'instagram',
+        formato: 'card_estatico',
+        status: 'agendado',
+        objetivo: 'Branding — autoridade histórica e posicionamento premium',
+        copy: 'Nº 1 em Silício no Brasil.\nNão por acidente.',
+        legenda: 'Desde 2002, a Gigamix desenvolve soluções com Silício real para o produtor brasileiro.\n\nLíquido. Granulado. Pó. Três formatos. Um compromisso: fazer o Silício funcionar de verdade na planta.\n\nEnquanto o mercado vendia SiO₂, a Gigamix formulava absorção.\n\nEssa é a história que dá origem ao Protocolo Safra Protegida.\n\n📲 Conheça nossos produtos. Link na bio.',
+        prompt_imagem: {
+          prompt: 'Panoramic shot of a vast Brazilian agricultural landscape at sunrise, multiple crop fields stretching to the horizon, warm golden light, sense of pride and scale, rich green and gold tones, dramatic sky with volumetric clouds. No text, no product, no people.',
+          style: 'epic landscape agricultural photography, Brazil',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, bottle, cartoon, people, urban elements'
+        }
+      }
+    ],
 
-📲 Falar com RC Gigamix — link na bio.`
-    }],
-    '2026-05-11':[{
-      id:104, tipo:'campanha', title:'CAMPANHA — Tabela de combos Protocolo Blindado',
-      canal:'carrossel', status:'agendado', objetivo:'Apresentar os 4 combos com clareza',
-      headline:'4 combos. Escolha o que a sua lavoura precisa.',
-      subtext:'Protocolo Blindado Gigamix — até 10% de vantagem.',
-      legenda:`Slide 1: Capa — 4 combos disponíveis
-Slide 2: C01 — Scudero + Plus + RZN → 10%
-Slide 3: C02 — Scudero + Plus → 5%
-Slide 4: C03 — Scudero + RZN → 5%
-Slide 5: C04 — Plus + RZN → 5%
-Slide 6: CTA — Falar com RC
+    // ─── 28/05 ─ QUA ─────────────────────────────────────────────
+    '2026-05-28': [
+      {
+        id: 511,
+        title: 'Card — Teaser Gustavo Pazzetti',
+        canal: 'instagram',
+        formato: 'card_estatico',
+        status: 'agendado',
+        objetivo: 'Autoridade técnica — teaser conteúdo pesquisador',
+        copy: 'Pesquisa aplicada.\nResultado no campo.',
+        legenda: 'No dia 25, o pesquisador Gustavo Pazzetti (@gustavopazzetti) gravou um treinamento completo sobre os mecanismos de ação do Silício nas culturas.\n\nEm breve trazemos os principais pontos aqui.\n\nPorque na Gigamix, o que a gente vende tem respaldo de pesquisa de verdade.\n\n👆 Segue a conta para não perder.',
+        prompt_imagem: {
+          prompt: 'Agronomist kneeling in a soybean field examining the crop closely, wearing field clothes, natural daylight, surrounded by dense healthy plants, shallow depth of field with blurred green canopy background, warm and trustworthy mood. No text, no product, face not identifiable.',
+          style: 'documentary agricultural photography',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, bottle, cartoon, lab coat, studio, identifiable face'
+        }
+      }
+    ],
 
-A proteção certa para o tamanho da sua necessidade.
+    // ─── 30/05 ─ SEX ─────────────────────────────────────────────
+    '2026-05-30': [
+      {
+        id: 512,
+        title: 'Card — Fechamento de maio | CTA Final',
+        canal: 'instagram',
+        formato: 'card_estatico',
+        status: 'agendado',
+        objetivo: 'Fechamento de ciclo — CTA final campanha',
+        copy: 'Maio termina.\nA condição especial, não.',
+        legenda: 'Um mês de conteúdo sobre defesa, resistência e enraizamento. Agora é hora de agir.\n\nO Protocolo Safra Protegida ainda está disponível com condição especial para quem fecha o conjunto completo:\n★ Scudero + Plus + RZN\n\nJunho está chegando. A sua safra não pode esperar.\n\n📲 Fala com seu RC Gigamix. Link na bio.',
+        prompt_imagem: {
+          prompt: 'Close-up photography of ripe soybean pods on the plant, golden hour warm light, pods full and healthy, blurred crop field stretching behind, sense of reward and completion, rich golden and green tones. No text, no product.',
+          style: 'macro agricultural photography, golden hour',
+          aspect_ratio: '4:5',
+          negative_prompt: 'text, watermark, logo, bottle, cartoon, people, damaged crop'
+        }
+      }
+    ],
 
-📲 Consultar RC — link na bio.`
-    }],
-    '2026-05-11':[{
-      id:104, tipo:'campanha', title:'CAMPANHA — Tabela de combos Protocolo Blindado',
-      canal:'carrossel', status:'agendado', objetivo:'Apresentar os 4 combos com clareza',
-      headline:'4 combos. Escolha o que a sua lavoura precisa.',
-      legenda:`C01: Scudero + Plus + RZN → 10% de vantagem\nC02: Scudero + Plus → 5%\nC03: Scudero + RZN → 5%\nC04: Plus + RZN → 5%\n\n📲 Falar com RC — link na bio.`
-    }],
-    '2026-05-13':[{
-      id:105, tipo:'conteudo', title:'Case real — Produtividade documentada no campo',
-      canal:'carrossel', status:'ideia', objetivo:'Prova social — preencher com dados reais',
-      headline:'Resultado documentado.\nNão é promessa, é lavoura.',
-      legenda:`[PREENCHER COM CASE REAL]\n\nProdutor: ___\nCultura: ___\nRegião: ___\nResultado: ___\n\n📸 Foto da lavoura na arte.`
-    }],
-    '2026-05-14':[{
-      id:1051, tipo:'darkpost', title:'DARK POST — Conversão C01 · Soja · Lookalike produtores',
-      canal:'dark post', status:'agendado', objetivo:'Conversão direta — fundo de funil',
-      headline:'Sem Silício real, a defesa da sua soja tem buracos.',
-      legenda:`[BRIEFING AGÊNCIA]\n\nSegmentação: Lookalike produtores de soja · PR, MT, GO\nFormato: Card estático + carrossel\nObjetivo: Conversão (lead WhatsApp)\nCTA: "Quero o protocolo"\n\nCopy:\nScudero + Plus + RZN. O protocolo que fecha a vulnerabilidade da lavoura de dentro pra fora.\n\nC01 com 10% de vantagem. Só até 30/05.\n\n📲 Falar com RC agora.`
-    }],
-    '2026-05-15':[{
-      id:106, tipo:'conteudo', title:'O insumo mais barato pode estar custando sua safra',
-      canal:'instagram', status:'agendado', objetivo:'Quebrar objeção de preço',
-      headline:'O insumo mais barato pode\nestar custando sua safra.',
-      legenda:`No agronegócio, o custo na nota raramente é o custo real.\n\n❌ Silício que a planta não absorve\n❌ Fungicida trabalhando no limite\n❌ Produtividade abaixo do potencial\n\nA Gigamix não compete por preço. Compete por resultado.\n\n📲 Link na bio.`
-    }],
-    '2026-05-18':[{
-      id:107, tipo:'conteudo', title:'Fundação Agrária comprova — 5 doenças controladas',
-      canal:'instagram', status:'agendado', objetivo:'Credibilidade científica',
-      headline:'Pesquisa comprova.\n5 doenças da soja controladas.',
-      legenda:`Não é marketing. É ciência.\n\n🔬 Ferrugem · Míldio · Oídio · Bacteriose · Cercospora\n\nFundação Agrária de Pesquisa Agropecuária — resultado documentado.\n\n📲 WhatsApp.`
-    }],
-    '2026-05-20':[{
-      id:108, tipo:'conteudo', title:'3 sinais de que sua lavoura precisa de Silício',
-      canal:'carrossel', status:'agendado', objetivo:'Alcance orgânico — salvar e compartilhar',
-      headline:'3 sinais de que sua lavoura\nestá pedindo Silício.',
-      legenda:`Slide 1: Capa\nSlide 2: Baixa resistência a doenças\nSlide 3: Estresse hídrico frequente\nSlide 4: Produtividade abaixo do potencial\nSlide 5: CTA Gigamix\n\n💾 Salva esse post.`
-    }],
-    '2026-05-21':[{
-      id:1081, tipo:'darkpost', title:'DARK POST — Urgência · Campanha metade do prazo',
-      canal:'dark post', status:'agendado', objetivo:'Reativação — meio de funil',
-      headline:'Faltam 10 dias. O protocolo ainda está disponível.',
-      legenda:`[BRIEFING AGÊNCIA]\n\nSegmentação: Retargeting visitantes site + engajamento Instagram 30d\nFormato: Story + Feed card\nObjetivo: Reengajamento → WhatsApp\nCTA: "Ver condições ainda disponíveis"\n\nCopy:\nO Protocolo Blindado Gigamix encerra em 10 dias. Quem garantiu o C01 ainda tem 10% de vantagem.\n\nSe você ainda não falou com o RC, agora é a hora.\n\n📲 Falar antes que encerre.`
-    }],
-    '2026-05-22':[{
-      id:109, tipo:'campanha', title:'CAMPANHA — CTA final · Reforço com urgência',
-      canal:'instagram', status:'agendado', objetivo:'Conversão — Fechamento da campanha',
-      headline:'Sua safra começa na escolha\ndo insumo certo.',
-      legenda:`O produtor que vai na frente não escolhe o mais barato. Escolhe o que comprova.\n\n🌱 22 anos · 3 formulações · 3 países\n\nProtocolo Blindado até 30/05.\n\n📲 Fala agora — link na bio.`
-    }],
-    '2026-05-25':[{
-      id:110, tipo:'conteudo', title:'Nº 1 em Silício no Brasil — Branding institucional',
-      canal:'instagram', status:'agendado', objetivo:'Branding / Posicionamento premium',
-      headline:'Nº 1 em Silício no Brasil.\n22 anos. 3 formulações. Resultado real.',
-      legenda:`💧 Líquido · 🌾 Granulado · 🌫️ Pó\n\nBrasil, Paraguai, Bolívia e Angola.\n\nO campo evoluiu. O Silício Gigamix evoluiu junto.\n\n📲 Link na bio.`
-    }],
-    '2026-05-27':[{
-      id:111, tipo:'conteudo', title:'Teaser — Treinamento com Gustavo Pazzetti',
-      canal:'instagram', status:'ideia', objetivo:'Gerar expectativa — pipeline treinamento',
-      headline:'Em breve: tudo sobre Silício\ncom quem pesquisa.',
-      legenda:`Nem toda informação sobre Silício vem do marketing.\n\nAlguma vem do laboratório.\n\nEm breve com @gustavopazzetti, pesquisador parceiro da Gigamix.\n\nAtiva o sininho. 🔔`
-    }],
-    '2026-05-28':[{
-      id:1111, tipo:'darkpost', title:'DARK POST — Encerramento campanha · Countdown 2 dias',
-      canal:'dark post', status:'agendado', objetivo:'Urgência máxima — últimas 48h',
-      headline:'2 dias. Depois o preço volta ao normal.',
-      legenda:`[BRIEFING AGÊNCIA]\n\nSegmentação: Todos que interagiram + visitantes + lookalike ampliado\nFormato: Story animado com contador + Feed card\nObjetivo: Conversão final\nCTA: "Garantir agora"\n\nCopy:\nO Protocolo Blindado encerra em 2 dias. Quem não garantiu perde a condição especial.\n\nC01 — Scudero + Plus + RZN: 10% de vantagem. Só até 30/05.\n\n📲 Falar com RC Gigamix agora.`
-    }],
-    '2026-05-29':[{
-      id:112, tipo:'campanha', title:'CAMPANHA — Fechamento de maio · CTA final',
-      canal:'instagram', status:'agendado', objetivo:'Conversão final + encerramento',
-      headline:'Maio termina.\nA vantagem por antecipação, não.',
-      legenda:`Um mês de conteúdo sobre defesa, resistência e enraizamento. Agora é hora de agir.\n\nProtocolo Safra Protegida ainda disponível com até 10% de vantagem.\n\nJunho está chegando. A sua safra não pode esperar.\n\n📲 Fala com seu RC Gigamix. Link na bio.`
-    }],
+  }, // fim posts
 
-    /* ─── JUNHO ─────────────────────────────────────────── */
-    '2026-06-03':[{
-      id:201, tipo:'campanha', title:'CAMPANHA — Mecanismo do Scudero Ultra · Como funciona',
-      canal:'carrossel', status:'agendado', objetivo:'Autoridade técnica — Junho S1',
-      headline:'Por que o Scudero Ultra funciona\nquando outros não chegam lá.',
-      legenda:`Slide 1: Capa\nSlide 2: O patógeno tenta entrar pela folha — Scudero já está lá\nSlide 3: Silício forma camada física na epiderme — barreira real\nSlide 4: Indução de resistência ativa as defesas naturais da planta\nSlide 5: Resultado: menos doença, menos fungicida, mais produtividade\nSlide 6: CTA — Protocolo Blindado com condição de antecipação\n\n📲 Link na bio.`
-    },{
-      id:2011, tipo:'darkpost', title:'DARK POST — Mecanismo Scudero · Top of funnel',
-      canal:'dark post', status:'agendado', objetivo:'Alcance e educação — junho S1',
-      headline:'Sua planta tem defesa natural. Você está ativando ela?',
-      legenda:`[BRIEFING AGÊNCIA]\n\nSegmentação: Produtores soja e milho · PR, SP, MT, GO · cold audience\nFormato: Vídeo 15s ou carrossel\nObjetivo: Alcance → tráfego para perfil\nCTA: "Entender como funciona"\n\nCopy:\nO Scudero Ultra não trata a doença. Ele impede que ela entre.\n\nSilício real que ativa a barreira física e os mecanismos de defesa da planta.\n\n📲 Saiba mais.`
-    }],
-    '2026-06-10':[{
-      id:202, tipo:'campanha', title:'CAMPANHA — Tripé dos produtos · Por que os 3 juntos',
-      canal:'carrossel', status:'agendado', objetivo:'Educar sobre o protocolo — Junho S2',
-      headline:'Scudero + Plus + RZN.\nPor que o protocolo completo funciona.',
-      legenda:`Slide 1: Capa\nSlide 2: Scudero — defesa foliar (de cima pra baixo)\nSlide 3: Plus — equilíbrio nutricional e resistência\nSlide 4: RZN — raiz forte, absorção real (de baixo pra cima)\nSlide 5: Juntos fecham o ciclo completo da planta\nSlide 6: CTA — Consultar RC sobre os combos\n\n📲 Link na bio.`
-    },{
-      id:2021, tipo:'darkpost', title:'DARK POST — Retargeting engajados S1 junho',
-      canal:'dark post', status:'agendado', objetivo:'Meio de funil — conversão soft',
-      headline:'Você viu como o Scudero funciona. Agora conheça o protocolo completo.',
-      legenda:`[BRIEFING AGÊNCIA]\n\nSegmentação: Retargeting engajados post S1 + visitantes site\nFormato: Card + CTA para WhatsApp\nObjetivo: Lead WhatsApp\nCTA: "Ver condições do protocolo"\n\nCopy:\nTrês produtos que trabalham juntos para a proteção completa da lavoura.\n\nScudero + Plus + RZN — Protocolo Blindado Gigamix.\n\n📲 Consultar condições.`
-    }],
-    '2026-06-17':[{
-      id:203, tipo:'campanha', title:'CAMPANHA — Diferencial da formulação Gigamix',
-      canal:'instagram', status:'agendado', objetivo:'Diferenciação vs concorrência — Junho S3',
-      headline:'Não é o produto que faz diferença.\nÉ a formulação.',
-      legenda:`A maioria vende SiO₂. A planta não absorve.\n\nA Gigamix formula Silício nas 3 formas únicas do mercado:\n💧 Líquido · 🌾 Granulado · 🌫️ Pó\n\nTodos com absorção real. Todos com resultado documentado.\n\n22 anos de pesquisa separando o que funciona do que não funciona.\n\n📲 Link na bio.`
-    },{
-      id:2031, tipo:'darkpost', title:'DARK POST — Comparativo Gigamix vs SiO₂ · Conversão',
-      canal:'dark post', status:'agendado', objetivo:'Fundo de funil — diferenciação',
-      headline:'Você já tentou Silício antes. Mas era SiO₂?',
-      legenda:`[BRIEFING AGÊNCIA]\n\nSegmentação: Lookalike clientes Gigamix + produtores que buscaram fertilizantes\nFormato: Card comparativo ou vídeo 20s\nObjetivo: Conversão → WhatsApp\nCTA: "Quero o Silício que funciona"\n\nCopy:\nSiO₂ não é absorvido pela planta. É vendido como Silício, mas não entrega.\n\nA Gigamix é diferente. 22 anos desenvolvendo a formulação certa.\n\n📲 Falar com especialista.`
-    }],
-    '2026-06-24':[{
-      id:204, tipo:'campanha', title:'CAMPANHA — Urgência pré-safra · Planejamento começa agora',
-      canal:'carrossel', status:'agendado', objetivo:'Urgência e antecipação — Junho S4',
-      headline:'Quem planeja a safra em julho\ncolhe diferente em março.',
-      legenda:`Slide 1: Capa\nSlide 2: Safra começa antes do plantio — insumo certo agora\nSlide 3: Scudero Ultra — proteção foliar desde o início\nSlide 4: Plus — equilíbrio nutricional no ciclo todo\nSlide 5: RZN — raiz que sustenta a produção\nSlide 6: CTA — Falar com RC para planejar safra\n\n📲 Consultar RC — link na bio.`
-    },{
-      id:2041, tipo:'darkpost', title:'DARK POST — Antecipação safra · Algodão e milho',
-      canal:'dark post', status:'agendado', objetivo:'Segmentação algodão e milho',
-      headline:'Algodão e milho pedem Silício desde o início.',
-      legenda:`[BRIEFING AGÊNCIA]\n\nSegmentação: Produtores algodão (BA, MT) + milho (PR, GO, SP)\nFormato: Card + vídeo curto\nObjetivo: Lead WhatsApp\nCTA: "Planejar safra com RC"\n\nCopy:\nAlgodão e milho respondem ao Silício desde o enraizamento.\n\nProtocolo Gigamix para as suas culturas — garanta antes da safra.\n\n📲 Falar com RC agora.`
-    }],
+  // ─── DARK POSTS ──────────────────────────────────────────────────
+  darkPosts: [
+    {
+      id: 'dp01',
+      title: 'DP01 — Lançamento | Safra Protegida',
+      periodo: '12/05 em diante',
+      publico: 'Topo de funil frio — interesse: agricultura, soja, milho, fertilizantes',
+      objetivo: 'Conversão → WhatsApp RC',
+      copy: 'Sua lavoura tem defesa, resistência e raiz trabalhando juntos?',
+      legenda: 'O Protocolo Safra Protegida reúne três produtos Gigamix desenvolvidos para proteger sua cultura em três frentes ao mesmo tempo — do V4 ao R5, sem janela aberta para perda.\n\nQuem fecha o protocolo completo garante uma condição especial.\n\n📲 Fala com um RC Gigamix agora e descobre qual combo faz sentido pra sua área.',
+      cta_botao: 'Enviar mensagem',
+      prompt_imagem: {
+        prompt: 'Wide angle ground-level shot of a thriving soybean field at golden hour, dense uniform canopy filling the frame, warm directional sunlight creating depth between rows, rich deep green tones, sense of abundance and productivity, sharp foreground leaves with blurred background. No text, no product, no people.',
+        style: 'cinematic agricultural photography, golden hour',
+        aspect_ratio: '1.91:1',
+        negative_prompt: 'text, watermark, logo, bottle, cartoon, people, aerial view, foggy'
+      }
+    },
+    {
+      id: 'dp02',
+      title: 'DP02 — Conversão | Benefício técnico por fase',
+      periodo: '21/05 em diante',
+      publico: 'Topo de funil frio + quem interagiu com DP01',
+      objetivo: 'Conversão → WhatsApp RC',
+      copy: 'Do V4 ao R5 com a lavoura coberta em todas as frentes.',
+      legenda: 'Proteção sistêmica, resistência foliar e raiz desenvolvida desde o início do ciclo.\n\nEsse é o resultado de um protocolo montado com os produtos certos, nas doses certas, no momento certo.\n\nO Protocolo Safra Protegida Gigamix tem condição especial para quem fecha o conjunto completo.\n\n📲 Chama um RC Gigamix pelo WhatsApp e descobre o que o protocolo faz pela sua cultura.',
+      cta_botao: 'Enviar mensagem',
+      prompt_imagem: {
+        prompt: 'Close-up of healthy soybean pods and leaves on the plant, golden afternoon backlight making the pods translucent and glowing, visible texture of the pod surface, rich green and gold tones, sharp detail with soft bokeh background. No text, no product, no people.',
+        style: 'macro agricultural photography, backlit golden hour',
+        aspect_ratio: '1.91:1',
+        negative_prompt: 'text, watermark, logo, bottle, cartoon, people, wide field, aerial'
+      }
+    },
+    {
+      id: 'dp03',
+      title: 'DP03 — Fechamento | Protocolo vs produto avulso',
+      periodo: '28/05 em diante',
+      publico: 'Topo de funil frio + retargeting DP01 e DP02 sem conversão',
+      objetivo: 'Conversão → WhatsApp RC',
+      copy: 'Lavoura protegida começa com protocolo.\nNão com produto avulso.',
+      legenda: 'Um produto cobre uma parte do ciclo. O protocolo fecha o círculo inteiro.\n\nScudero, Plus e RZN — cada um com uma função. Juntos, cobrindo defesa, resistência e estrutura radicular do V4 ao R5.\n\nA condição especial para o protocolo completo está disponível por tempo limitado.\n\n📲 Fala agora com um RC Gigamix pelo WhatsApp.',
+      cta_botao: 'Enviar mensagem',
+      prompt_imagem: {
+        prompt: "Farmer's hands holding mature soybean plants freshly pulled from the ground, showing both the dense root system below and the healthy leafy canopy above, dark moist soil in the background, warm natural daylight, earthy and green tones, sense of result and reward. No text, no product, face not visible.",
+        style: 'documentary agricultural photography',
+        aspect_ratio: '1.91:1',
+        negative_prompt: 'text, watermark, logo, bottle, cartoon, identifiable face, studio background'
+      }
+    }
+  ]
 
-    /* ─── JULHO ─────────────────────────────────────────── */
-    '2026-07-08':[{
-      id:301, tipo:'campanha', title:'CAMPANHA — Autoridade científica · Material Gustavo Pazzetti',
-      canal:'carrossel', status:'agendado', objetivo:'Credibilidade científica — Julho S2',
-      headline:'Silício com respaldo de pesquisa.\nNão é marketing, é laboratório.',
-      legenda:`Slide 1: Capa com @gustavopazzetti\nSlide 2: O que a pesquisa mostrou sobre absorção de Silício\nSlide 3: Diferença entre SiO₂ e Silício real nas análises\nSlide 4: Resultados documentados em campo\nSlide 5: Gigamix — a formulação que o pesquisador valida\nSlide 6: CTA\n\n📲 Link na bio.`
-    },{
-      id:3011, tipo:'darkpost', title:'DARK POST — Autoridade científica · Top of funnel frio',
-      canal:'dark post', status:'agendado', objetivo:'Alcance com credibilidade',
-      headline:'O pesquisador testou. O produtor aprovou.',
-      legenda:`[BRIEFING AGÊNCIA]\n\nSegmentação: Cold audience amplo · produtores e agrônomos\nFormato: Vídeo com trecho do Gustavo + card\nObjetivo: Alcance e reconhecimento de marca\nCTA: "Ver resultado da pesquisa"\n\nCopy:\nNem toda informação sobre Silício vem do marketing. Alguma vem do laboratório.\n\n@gustavopazzetti, pesquisador parceiro Gigamix, explica por que a formulação importa.\n\n📲 Saiba mais.`
-    }],
-    '2026-07-15':[{
-      id:302, tipo:'conteudo', title:'Planejamento de safra · Por que o Silício entra primeiro',
-      canal:'instagram', status:'agendado', objetivo:'Educação safra — Julho S3',
-      headline:'A safra que vai bem em março\nfoi planejada em julho.',
-      legenda:`Quem chega no plantio sem o protocolo certo começa atrás.\n\nSilício real desde o início:\n🌱 Raiz mais desenvolvida\n🛡️ Defesa ativada antes do estresse\n📈 Produtividade documentada\n\nA Gigamix está aqui para planejar junto.\n\n📲 Falar com RC — link na bio.`
-    },{
-      id:3021, tipo:'darkpost', title:'DARK POST — Planejamento safra · Retargeting junho',
-      canal:'dark post', status:'agendado', objetivo:'Reativação leads não convertidos',
-      headline:'Você pesquisou em junho. A safra não espera.',
-      legenda:`[BRIEFING AGÊNCIA]\n\nSegmentação: Retargeting todos os engajados maio-junho + visitantes site\nFormato: Card urgência + story\nObjetivo: Reativação → WhatsApp\nCTA: "Planejar antes do plantio"\n\nCopy:\nA janela de planejamento está fechando. Quem garante o protocolo agora chega no plantio com tudo pronto.\n\nProtocolo Gigamix — consulte o RC.\n\n📲 Falar agora.`
-    }],
-    '2026-07-22':[{
-      id:303, tipo:'campanha', title:'CAMPANHA — Reta final · Última chance condições especiais',
-      canal:'carrossel', status:'agendado', objetivo:'Urgência máxima — Julho S4',
-      headline:'Reta final.\nÚltima chance para garantir o protocolo com vantagem.',
-      legenda:`Slide 1: Capa urgência\nSlide 2: C01 — Scudero + Plus + RZN → ainda disponível\nSlide 3: O que muda sem o protocolo na safra\nSlide 4: Depoimento / case de produtor\nSlide 5: CTA — prazo real\n\n⚠️ Condições encerram em 28/07.\n\n📲 Garantir agora — link na bio.`
-    }],
-    '2026-07-28':[{
-      id:304, tipo:'darkpost', title:'DARK POST — Countdown final · Encerramento 28/07',
-      canal:'dark post', status:'agendado', objetivo:'Urgência máxima — último dia',
-      headline:'Hoje é o último dia. Depois volta ao preço cheio.',
-      legenda:`[BRIEFING AGÊNCIA]\n\nSegmentação: TODOS os públicos — retargeting total + lookalike\nFormato: Story animado com contador regressivo + Feed urgência\nObjetivo: Conversão máxima\nCTA: "Garantir agora — último dia"\nHorário sugerido: 7h + 12h + 18h\n\nCopy:\nO Protocolo Blindado Gigamix encerra hoje.\nDepois disso, preço cheio.\n\nC01 — Scudero + Plus + RZN: 10% de vantagem.\nSó até meia-noite de hoje.\n\n📲 Falar com RC AGORA.`
-    },{
-      id:305, tipo:'campanha', title:'CAMPANHA — Encerramento oficial campanha',
-      canal:'instagram', status:'agendado', objetivo:'Encerramento e ponte para pós-campanha',
-      headline:'A campanha encerrou.\nMas a Gigamix continua aqui.',
-      legenda:`O Protocolo Blindado foi um sucesso. Produtores de todo o Brasil garantiram a proteção da safra com tecnologia real.\n\nPara quem ficou de fora: o atendimento continua. A tecnologia não muda.\n\n🌱 22 anos. 3 formulações. Resultado real.\n\n📲 Falar com RC Gigamix.`
-    }],
-  }
 };
